@@ -26,7 +26,7 @@ to keep track of our progress.
 | Alternative Label Encoding    | not started    | <ul><li>[ ] BIOUL</li></ul>
 | Pipeline vs Joint prediction  | not started    | <ul><li>[ ] Pipeline</li><li>[ ] Joint Prediction</li><li>[ ] Comparison</li></ul>
 | Architecture Impact           | in progress    | <ul><li>[x] LSTM</li><li>[x] GRU</li><li>[ ] Character Level</li><li>[x] Depth</li></ul>
-| Pretrained Word Embeddings    | not started    | <ul><li>[ ] ELMo</li><li>[ ] BERT</li><li>[ ] Multilingual BERT</li></ul>
+| Pretrained Word Embeddings    | not started    | <ul><li>[ ] ELMo</li><li>[x] BERT</li><li>[x] Multilingual BERT</li></ul>
 | Error Analysis                | finished       | <ul><li>[x] Confusion Matrix</li><li>[x] Common Errors</li></ul>
 
 
