@@ -1,0 +1,54 @@
+.. SenTarget documentation master file, created by
+   sphinx-quickstart on Tue Apr 28 19:33:55 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to SenTarget's documentation!
+=====================================
+
+A python package for NLP application
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Getting Started
+
+    source/getting-started
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Data
+
+    source/data
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Model
+
+    source/model
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Grid Search
+
+    source/gridsearch
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Package
+
+    source/package
+
+
+
+
+Indices
+=======
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

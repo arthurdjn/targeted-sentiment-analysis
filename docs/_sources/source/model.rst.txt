@@ -1,0 +1,137 @@
+=====
+Model
+=====
+
+
+Definition
+==========
+
+A model is used to encapsulate a PyTorch module. It is mainly used to train, evaluate and test a neural network.
+
+The *API* is similar to sklearn or tensorflow ones.
+
+By using this template, you will be able to use the ``Tuner`` class and ``fit`` method.
+
+
+.. code-block:: python
+
+    from sentarget.nn import Model
+
+
+    class MyModel(Model):
+        def __init__(self, *args):
+            super(Model, self).__init__()
+            # initialize your module as usual
+
+        def forward(*args):
+            # one forward step
+            pass
+
+        def run(train_iterator, criterion, optimizer):
+            # train one single time the network on train data
+            pass
+
+        def evaluate(eval_iterator, criterion):
+            # evaluate one single time the network on eval / valid data
+            pass
+
+        # Optional
+        def predict(test_iterator):
+            # test one single time the network on test data
+            pass
+
+
+Example
+=======
+
+.. code-block:: python
+
+    # Run and train the model
+    model = MyModel()
+    # By using the 'Model' template, you can use the pre-defined ``fit`` method,
+    # used to train and evaluate the model epochs time.
+    model.fit(epochs, train_iterator, eval_iterator, criterion, optimizer)
+
+
+======
+Solver
+======
+
+
+Definition
+==========
+
+If you prefer to separate the training functions from your model, you can use the ``Solver`` class.
+
+A ``Solver`` is an object used for training, evaluating and testing a model.
+The performance is stored in a dictionary, both for training and testing.
+In addition, the best model occurred during training is stored,
+as well as it's checkpoint to re-load a model at a specific epoch.
+
+
+.. code-block:: python
+
+    from sentarget.nn import Solver
+
+
+    class SolverBiLSTM(Solver):
+        # Performer for the bidirectional LSTM model
+
+        def __init__(self, model=None, criterion=None, optimizer=None):
+            super().__init__(model, criterion, optimizer)
+
+        def train(self, iterator):
+            # train one single time the network on train data
+
+            # Train mode
+            self.model.train()
+            for (idx, batch) in enumerate(iterator):
+                self.optimizer.zero_grad()
+                # Do stuff
+
+            # Store the loss, accuracy and metrics in a dictionary
+            results_train = {"loss": epoch_loss / len(iterator),
+                             "accuracy": epoch_acc / len(iterator),
+                             # some other metrics...
+                             }
+
+            return results_train
+
+        def evaluate(self, iterator):
+            # evaluate one single time the network on eval / valid data
+
+            # Eval mode
+            self.model.eval()
+            with torch.no_grad():
+                for (idx, batch) in enumerate(iterator):
+                    # One forward step
+                    # Do stuff
+
+            # Store the loss, accuracy and metrics in a dictionary
+            results_eval = {"loss": epoch_loss / len(iterator),
+                            "accuracy": epoch_acc / len(iterator),
+                             # some other metrics...
+                            }
+
+            return results_eval
+
+
+Example
+=======
+
+
+.. code-block:: python
+
+    import torch.nn as nn
+    import torch.optim as optim
+
+    model = nn.Sequential(nn.Linear(10, 100), nn.Sigmoid(), nn.Linear(100, 5), nn.ReLU())
+    optimizer = optim.Adam(model.parameters())
+    criterion = nn.CrossEntropyLoss(ignore_index = LABEL_PAD_IDX)
+
+    solver = BiLSTMSolver(model, optimizer=optimizer, criterion=criterion)
+
+    # epochs = number of training loops
+    # train_iterator = Iterator, DataLoader... Training data
+    # eval_iterator = Iterator, DataLoader... Eval data
+    solver.fit(train_iterator, eval_iterator, epochs=epochs)

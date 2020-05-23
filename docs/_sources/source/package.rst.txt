@@ -1,0 +1,194 @@
+=========
+sentarget
+=========
+
+*SenTarget* provides already set-up *PyTorch* models for targeted sentiment analysis a.k.a.
+Aspact Based Sentiment Analysis (ASBA).
+
+Here is some examples on how to use this package:
+
+.. code-block:: python
+
+    # PyTorch
+    import torchtext
+    from torchtext.vocab import Vectors
+    import torch.nn as nn
+    import torch.optim as optim
+    # SenTarget
+    from sentarger.datasets import NoReCfine
+    from sentarget.nn.models.lstm import BiLSTM
+
+    # Extract the fields from the dataset (conll format).
+    # Here we are only interested on the text and labels.
+    TEXT = torchtext.data.Field(lower=False, include_lengths=True, batch_first=True)
+    LABEL = torchtext.data.Field(batch_first=True)
+    FIELDS = [("text", TEXT), ("label", LABEL)]
+    train_data, eval_data, test_data = NoReCfine.splits(FIELDS)
+
+    # Defines the vocabulary to work on, and add already pre-trained word embeddings.
+    # NOTE: these word embeddings are not part of the repository, but can be downloaded from nlpl servers (58.zip file).
+    VOCAB_SIZE = 1_200_000
+    VECTORS = Vectors(name='word2vec/model.txt')
+    TEXT.build_vocab(train_data,
+                     max_size = VOCAB_SIZE,
+                     vectors = VECTORS,
+                     unk_init = torch.Tensor.normal_)
+    LABEL.build_vocab(train_data)
+
+    # Build the iterators, and set it to the 'cpu'
+    BATCH_SIZE = 64
+    device = torch.device('cpu')
+    train_iterator, eval_iterator, test_iterator = data.BucketIterator.splits(
+                    (train_data, eval_data, test_data),
+                    batch_size = BATCH_SIZE,
+                    sort_within_batch = True,
+                    device = device)
+
+    # Load the model
+    INPUT_DIM = len(TEXT.vocab)
+    EMBEDDING_DIM = 100
+    HIDDEN_DIM = 128
+    OUTPUT_DIM = len(LABEL.vocab)
+    N_LAYERS = 2
+    BIDIRECTIONAL = True
+    DROPOUT = 0.25
+    PAD_IDX = TEXT.vocab.stoi[TEXT.pad_token]
+
+    model = BiLSTM(INPUT_DIM,
+                   EMBEDDING_DIM,
+                   HIDDEN_DIM,
+                   OUTPUT_DIM,
+                   N_LAYERS,
+                   BIDIRECTIONAL,
+                   DROPOUT,
+                   PAD_IDX)
+
+    # Initialize the embedding layers with the pre-trained word embeddings (previously loaded)
+    PAD_IDX = TEXT.vocab.stoi[TEXT.pad_token]
+    UNK_IDX = TEXT.vocab.stoi[TEXT.unk_token]
+    pretrained_embeddings = TEXT.vocab.vectors
+    model.init_embeddings(pretrained_embeddings, ignore_index=[PAD_IDX, UNK_IDX])
+
+    # ...and fit / train the model
+    # NOTE: there are two ways to train a model.
+    # Either you can use the `tensorflow` *API*, with the `.fit()` method.
+    # In that case, you should make sure that all methods are defined within the network you loaded.
+    # The other way uses the `PyTorch` *API* with a `Solver` to train a specific model.
+    # Both methods are similar, just the *API* changes.
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters())
+
+    # Train the model for 50 epochs
+    EPOCHS = 50
+    model.fit(EPOCHS, train_iterator, eval_iterator, criterion, optimizer)
+
+
+============
+sentarget.nn
+============
+
+sentarget.nn.solver
+===================
+
+.. automodule:: sentarget.nn.solver
+    :members:
+
+
+===================
+sentarget.nn.models
+===================
+
+sentarget.nn.models.model
+=========================
+
+.. automodule:: sentarget.nn.models.model
+    :members:
+
+
+sentarget.nn.models.lstm
+========================
+
+.. automodule:: sentarget.nn.models.lstm
+    :members:
+
+sentarget.nn.models.gru
+=======================
+
+.. automodule:: sentarget.nn.models.gru
+    :members:
+
+
+
+=================
+sentarget.metrics
+=================
+
+sentarget.metrics.confusion
+============================
+
+.. automodule:: sentarget.metrics.confusion
+    :members:
+
+sentarget.metrics.functional
+============================
+
+.. automodule:: sentarget.metrics.functional
+    :members:
+
+
+===============
+sentarget.tuner
+===============
+
+sentarget.tuner.tuner
+=====================
+
+.. automodule:: sentarget.tuner.tuner
+    :members:
+
+sentarget.tuner.functional
+==========================
+
+.. automodule:: sentarget.tuner.functional
+    :members:
+
+
+==================
+sentarget.datasets
+==================
+
+sentarget.datasets.norecfine
+=============================
+
+.. automodule:: sentarget.datasets.norecfine
+    :members:
+
+sentarget.datasets.nonlpl
+=========================
+
+.. automodule:: sentarget.datasets.nonlpl
+    :members:
+
+
+
+===============
+sentarget.utils
+===============
+
+sentarget.utils.functions
+=========================
+
+.. automodule:: sentarget.utils.functions
+    :members:
+
+sentarget.utils.display
+=======================
+
+.. automodule:: sentarget.utils.display
+    :members:
+
+sentarget.utils.decorator
+=========================
+
+.. automodule:: sentarget.utils.decorator
+    :members:

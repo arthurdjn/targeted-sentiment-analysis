@@ -1,0 +1,2257 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sentarget &mdash; SenTarget 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Tuner" href="gridsearch.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://pages.github.uio.no/arthurd/in5550-exam/" aria-label="SenTarget"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://github.uio.no/arthurd/in5550-exam">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Set-up</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">NoReCfine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html#nlpl-word-embeddings">NLPL Word Embeddings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html#solver">Solver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Grid Search</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gridsearch.html">Tuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gridsearch.html#grid-search">Grid Search</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Package</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">sentarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentarget-nn">sentarget.nn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentarget-nn-models">sentarget.nn.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentarget-metrics">sentarget.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentarget-tuner">sentarget.tuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentarget-datasets">sentarget.datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentarget-utils">sentarget.utils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>sentarget</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/package.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="sentarget">
+<h1>sentarget<a class="headerlink" href="#sentarget" title="Permalink to this headline">¶</a></h1>
+<p><em>SenTarget</em> provides already set-up <em>PyTorch</em> models for targeted sentiment analysis a.k.a.
+Aspact Based Sentiment Analysis (ASBA).</p>
+<p>Here is some examples on how to use this package:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># PyTorch</span>
+<span class="kn">import</span> <span class="nn">torchtext</span>
+<span class="kn">from</span> <span class="nn">torchtext.vocab</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="c1"># SenTarget</span>
+<span class="kn">from</span> <span class="nn">sentarger.datasets</span> <span class="kn">import</span> <span class="n">NoReCfine</span>
+<span class="kn">from</span> <span class="nn">sentarget.nn.models.lstm</span> <span class="kn">import</span> <span class="n">BiLSTM</span>
+
+<span class="c1"># Extract the fields from the dataset (conll format).</span>
+<span class="c1"># Here we are only interested on the text and labels.</span>
+<span class="n">TEXT</span> <span class="o">=</span> <span class="n">torchtext</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_lengths</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">LABEL</span> <span class="o">=</span> <span class="n">torchtext</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">FIELDS</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">LABEL</span><span class="p">)]</span>
+<span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">NoReCfine</span><span class="o">.</span><span class="n">splits</span><span class="p">(</span><span class="n">FIELDS</span><span class="p">)</span>
+
+<span class="c1"># Defines the vocabulary to work on, and add already pre-trained word embeddings.</span>
+<span class="c1"># NOTE: these word embeddings are not part of the repository, but can be downloaded from nlpl servers (58.zip file).</span>
+<span class="n">VOCAB_SIZE</span> <span class="o">=</span> <span class="mi">1_200_000</span>
+<span class="n">VECTORS</span> <span class="o">=</span> <span class="n">Vectors</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;word2vec/model.txt&#39;</span><span class="p">)</span>
+<span class="n">TEXT</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span>
+                 <span class="n">max_size</span> <span class="o">=</span> <span class="n">VOCAB_SIZE</span><span class="p">,</span>
+                 <span class="n">vectors</span> <span class="o">=</span> <span class="n">VECTORS</span><span class="p">,</span>
+                 <span class="n">unk_init</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="o">.</span><span class="n">normal_</span><span class="p">)</span>
+<span class="n">LABEL</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+
+<span class="c1"># Build the iterators, and set it to the &#39;cpu&#39;</span>
+<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">test_iterator</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">BucketIterator</span><span class="o">.</span><span class="n">splits</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">),</span>
+                <span class="n">batch_size</span> <span class="o">=</span> <span class="n">BATCH_SIZE</span><span class="p">,</span>
+                <span class="n">sort_within_batch</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="n">device</span> <span class="o">=</span> <span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Load the model</span>
+<span class="n">INPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">HIDDEN_DIM</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">OUTPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">BIDIRECTIONAL</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">DROPOUT</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">BiLSTM</span><span class="p">(</span><span class="n">INPUT_DIM</span><span class="p">,</span>
+               <span class="n">EMBEDDING_DIM</span><span class="p">,</span>
+               <span class="n">HIDDEN_DIM</span><span class="p">,</span>
+               <span class="n">OUTPUT_DIM</span><span class="p">,</span>
+               <span class="n">N_LAYERS</span><span class="p">,</span>
+               <span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+               <span class="n">DROPOUT</span><span class="p">,</span>
+               <span class="n">PAD_IDX</span><span class="p">)</span>
+
+<span class="c1"># Initialize the embedding layers with the pre-trained word embeddings (previously loaded)</span>
+<span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+<span class="n">UNK_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">unk_token</span><span class="p">]</span>
+<span class="n">pretrained_embeddings</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">vectors</span>
+<span class="n">model</span><span class="o">.</span><span class="n">init_embeddings</span><span class="p">(</span><span class="n">pretrained_embeddings</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="p">[</span><span class="n">PAD_IDX</span><span class="p">,</span> <span class="n">UNK_IDX</span><span class="p">])</span>
+
+<span class="c1"># ...and fit / train the model</span>
+<span class="c1"># NOTE: there are two ways to train a model.</span>
+<span class="c1"># Either you can use the `tensorflow` *API*, with the `.fit()` method.</span>
+<span class="c1"># In that case, you should make sure that all methods are defined within the network you loaded.</span>
+<span class="c1"># The other way uses the `PyTorch` *API* with a `Solver` to train a specific model.</span>
+<span class="c1"># Both methods are similar, just the *API* changes.</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+
+<span class="c1"># Train the model for 50 epochs</span>
+<span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">EPOCHS</span><span class="p">,</span> <span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sentarget-nn">
+<h1>sentarget.nn<a class="headerlink" href="#sentarget-nn" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-sentarget.nn.solver">
+<span id="sentarget-nn-solver"></span><h2>sentarget.nn.solver<a class="headerlink" href="#module-sentarget.nn.solver" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">Solver</span></code> is an object used for training, evaluating and testing a model.
+The performance is stored in a dictionary, both for training and testing.
+In addition, the best model occurred during training is stored,
+as well as it’s checkpoint to re-load a model at a specific epoch.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">())</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">ignore_index</span> <span class="o">=</span> <span class="n">LABEL_PAD_IDX</span><span class="p">)</span>
+
+<span class="n">solver</span> <span class="o">=</span> <span class="n">BiLSTMSolver</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="n">criterion</span><span class="p">)</span>
+
+<span class="c1"># epochs = number of training loops</span>
+<span class="c1"># train_iterator = Iterator, DataLoader... Training data</span>
+<span class="c1"># eval_iterator = Iterator, DataLoader... Eval data</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.nn.solver.Solver">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.nn.solver.</code><code class="sig-name descname">Solver</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">optimizer=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train and evaluate model.</p>
+<blockquote>
+<div><ul>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code> (Module): model to optimize or test.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">checkpoint</span></code> (dict): checkpoint of the best model tested.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">criterion</span></code> (Loss): loss function.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">optimizer</span></code> (Optimizer): optimizer for weights and biases.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">performance</span></code> (dict): dictionary where performances are stored.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'train'</span></code> (dict): training dictionary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'eval'</span></code> (dict): testing dictionary.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>Module</em>) – model to optimize or test.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer for weights and biases.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="sentarget.nn.solver.Solver.evaluate">
+<em class="property">abstract </em><code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.solver.Solver.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">train_iterator</em>, <em class="sig-param">eval_iterator</em>, <em class="sig-param">*args</em>, <em class="sig-param">epochs=10</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train and evaluate a model X times. During the training, both training
+and evaluation results are saved under the <cite>performance</cite> attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>eval_iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of times the model will be trained.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code> display a progress bar and metrics at each epoch.
+The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span> <span class="o">=</span> <span class="n">MySolver</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Train &amp; eval EPOCHS times</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">EPOCHS</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">    Epoch:        1/10</span>
+<span class="go">    Training:     100% | [==================================================]</span>
+<span class="go">    Evaluation:   100% | [==================================================]</span>
+<span class="go">    Stats Training:    | Loss: 0.349 | Acc: 84.33% | Prec.: 84.26%</span>
+<span class="go">    Stats Evaluation:  | Loss: 0.627 | Acc: 72.04% | Prec.: 72.22%</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.solver.Solver.get_accuracy">
+<code class="sig-name descname">get_accuracy</code><span class="sig-paren">(</span><em class="sig-param">y_tilde</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver.get_accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver.get_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute accuracy from predicted classes and gold labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_tilde</strong> (<em>Tensor</em>) – 1D tensor containing the predicted classes for each predictions
+in the batch. This tensor should be computed through <cite>get_predicted_classes(y_hat)</cite> method.</p></li>
+<li><p><strong>y</strong> (<em>Tensor</em>) – gold labels. Note that y_tilde an y must have the same shape.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the mean of correct answers.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>       <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_tilde</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">get_accuracy</span><span class="p">(</span><span class="n">y_tilde</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">    0.7</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.solver.Solver.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the performance dictionary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.solver.Solver.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">filename=None</em>, <em class="sig-param">dirpath='.'</em>, <em class="sig-param">checkpoint=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the best torch model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – name of the model. The default is “model.pt”.</p></li>
+<li><p><strong>dirpath</strong> (<em>str</em><em>, </em><em>optional</em>) – path to the desired foldre location. The default is “.”.</p></li>
+<li><p><strong>checkpoint</strong> (<em>bool</em><em>, </em><em>optional</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> to save the model at the best checkpoint during training.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.solver.Solver.train">
+<em class="property">abstract </em><code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/solver.html#Solver.train"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.solver.Solver.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="sentarget-nn-models">
+<h1>sentarget.nn.models<a class="headerlink" href="#sentarget-nn-models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-sentarget.nn.models.model">
+<span id="sentarget-nn-models-model"></span><h2>sentarget.nn.models.model<a class="headerlink" href="#module-sentarget.nn.models.model" title="Permalink to this headline">¶</a></h2>
+<p>Defines a model template.
+A <cite>Model</cite> is really similar to the <cite>Module</cite> class, except that a <cite>Model</cite> has more inner methods,
+used to train, evaluate and test a neural network.</p>
+<p>The <em>API</em> is similar to sklearn or tensorflow.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Model</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># initialize your module as usual</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="c1"># one forward step</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+        <span class="c1"># train one single time the network</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">eval_iterator</span><span class="p">,</span> <span class="n">criterion</span><span class="p">):</span>
+        <span class="c1"># evaluate one single time the network</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">test_iterator</span><span class="p">):</span>
+        <span class="c1"># predict one single time the network</span>
+        <span class="k">pass</span>
+
+
+<span class="c1"># Run and train the model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.nn.models.model.Model">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.nn.models.model.</code><code class="sig-name descname">Model</code><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <cite>Model</cite> is used to define a neural network.
+This template is easier to handle for hyperparameters optimization, as the <code class="docutils literal notranslate"><span class="pre">fit</span></code>, <code class="docutils literal notranslate"><span class="pre">train</span></code>, <code class="docutils literal notranslate"><span class="pre">evaluate</span></code>
+methods are part of the model.</p>
+<ul>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">checkpoint</span></code> (dict): checkpoint of the best model tested.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">criterion</span></code> (Loss): loss function.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">optimizer</span></code> (Optimizer): optimizer for weights and biases.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">performance</span></code> (dict): dictionary where performances are stored.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'train'</span></code> (dict): training dictionary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'eval'</span></code> (dict): testing dictionary.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.describe_performance">
+<code class="sig-name descname">describe_performance</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.describe_performance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.describe_performance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a display of the last performance for both train and eval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>two strings showing statistics for train and eval sessions.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.evaluate">
+<em class="property">abstract </em><code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">criterion</em>, <em class="sig-param">optimizer</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">train_iterator</em>, <em class="sig-param">eval_iterator</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">optimizer=None</em>, <em class="sig-param">epochs=10</em>, <em class="sig-param">verbose=True</em>, <em class="sig-param">compare_on='accuracy'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train and evaluate a model X times. During the training, both training
+and evaluation results are saved under the <cite>performance</cite> attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>eval_iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of times the model will be trained.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code> display a progress bar and metrics at each epoch.</p></li>
+<li><p><strong>compare_on</strong> (<em>string</em>) – name of the score on which models are compared.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the best model evaluated.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#sentarget.nn.models.model.Model" title="sentarget.nn.models.model.Model">Model</a></p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Train &amp; eval EPOCHS times</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">EPOCHS</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">)</span>
+<span class="go">    Epoch:        1/10</span>
+<span class="go">    Training:     100% | [==================================================]</span>
+<span class="go">    Evaluation:   100% | [==================================================]</span>
+<span class="go">    Stats Training:    | Loss: 0.349 | Acc: 84.33% | Prec.: 84.26%</span>
+<span class="go">    Stats Evaluation:  | Loss: 0.627 | Acc: 72.04% | Prec.: 72.22%</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.log_perf">
+<code class="sig-name descname">log_perf</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.log_perf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.log_perf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a log from the performances.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the performance and associated checkpoint dictionary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.run">
+<em class="property">abstract </em><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">criterion</em>, <em class="sig-param">optimizer</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">filename=None</em>, <em class="sig-param">name=None</em>, <em class="sig-param">dirpath='.'</em>, <em class="sig-param">checkpoint=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the best torch model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – name of the model. The default is “model.pt”.</p></li>
+<li><p><strong>dirpath</strong> (<em>str</em><em>, </em><em>optional</em>) – path to the desired foldre location. The default is “.”.</p></li>
+<li><p><strong>checkpoint</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to save the model at the best checkpoint during training.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.model.Model.state_json">
+<code class="sig-name descname">state_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/model.html#Model.state_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.model.Model.state_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a serialized <code class="docutils literal notranslate"><span class="pre">state_dict</span></code>, so it can be saved as a <code class="docutils literal notranslate"><span class="pre">json</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.nn.models.lstm">
+<span id="sentarget-nn-models-lstm"></span><h2>sentarget.nn.models.lstm<a class="headerlink" href="#module-sentarget.nn.models.lstm" title="Permalink to this headline">¶</a></h2>
+<p>The Bilinear Long Short Term Memory is a vanilla model used for targeted sentiment analysis,
+and compared to more elaborated models.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defines the shape of the models</span>
+<span class="n">INPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">HIDDEN_DIM</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">OUTPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">BIDIRECTIONAL</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">DROPOUT</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">BiLSTM</span><span class="p">(</span><span class="n">INPUT_DIM</span><span class="p">,</span>
+               <span class="n">EMBEDDING_DIM</span><span class="p">,</span>
+               <span class="n">HIDDEN_DIM</span><span class="p">,</span>
+               <span class="n">OUTPUT_DIM</span><span class="p">,</span>
+               <span class="n">N_LAYERS</span><span class="p">,</span>
+               <span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+               <span class="n">DROPOUT</span><span class="p">,</span>
+               <span class="n">PAD_IDX</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.nn.models.lstm.BiLSTM">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.nn.models.lstm.</code><code class="sig-name descname">BiLSTM</code><span class="sig-paren">(</span><em class="sig-param">input_dim</em>, <em class="sig-param">embedding_dim=100</em>, <em class="sig-param">hidden_dim=128</em>, <em class="sig-param">output_dim=7</em>, <em class="sig-param">n_layers=2</em>, <em class="sig-param">bidirectional=True</em>, <em class="sig-param">dropout=0.25</em>, <em class="sig-param">pad_idx_text=1</em>, <em class="sig-param">unk_idx_text=0</em>, <em class="sig-param">pad_idx_label=0</em>, <em class="sig-param">embeddings=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/lstm.html#BiLSTM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.lstm.BiLSTM" title="Permalink to this definition">¶</a></dt>
+<dd><p>This bilinear model uses the <cite>sklearn</cite> template, i.e. with a fit method within the module.</p>
+<p>Make sure to add a criterion and optimizer when loading a model.</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">input_dim</span></code> (int): input dimension, i.e. dimension of the incoming words.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">embedding_dim</span></code> (int): dimension of the word embeddigns.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">hidden_dim</span></code> (int): dimmension used to map words with the recurrent unit.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">output_dim</span></code> (int): dimension used for classification. This one should be equals to the number of classes.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">n_layers</span></code> (int): number of recurrent layers.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">bidirectional</span></code> (bool): if <cite>True</cite>, set two recurrent layers in the opposite direction.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">dropout</span></code> (float): ratio of connections set to zeros.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">pad_idx_text</span></code> (int): index of the <cite>&lt;pad&gt;</cite> text token.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">pad_idx_label</span></code> (int): index of the <cite>&lt;pad&gt;</cite> label token.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">embeddings</span></code> (torch.Tensor): pretrained embeddings, of shape <code class="docutils literal notranslate"><span class="pre">(input_dim,</span> <span class="pre">embeddings_dim)</span></code>.</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">INPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HIDDEN_DIM</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OUTPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BIDIRECTIONAL</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">DROPOUT</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX_TEXT</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX_LABEL</span> <span class="o">=</span> <span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">LABEL</span><span class="o">.</span><span class="n">unk_token</span><span class="p">]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">BiLSTM</span><span class="p">(</span><span class="n">INPUT_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">EMBEDDING_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">HIDDEN_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">OUTPUT_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">N_LAYERS</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">DROPOUT</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">pad_idx_text</span><span class="o">=</span><span class="n">PAD_IDX_TEXT</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">pad_idx_label</span><span class="o">=</span><span class="n">PAD_IDX_LABEL</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="sentarget.nn.models.lstm.BiLSTM.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">criterion</em>, <em class="sig-param">optimizer</em>, <em class="sig-param">verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/lstm.html#BiLSTM.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.lstm.BiLSTM.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – if <cite>True</cite> display a progress bar.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.lstm.BiLSTM.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">length</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/lstm.html#BiLSTM.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.lstm.BiLSTM.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>One forward step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The forward propagation requires text’s length, so a padded pack can be applied to batches.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>torch.tensor</em>) – text composed of word embeddings vectors from one batch.</p></li>
+<li><p><strong>length</strong> (<em>torch.tensor</em>) – vector indexing the lengths of <cite>text</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">data_iterator</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">text</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">text</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.lstm.BiLSTM.get_accuracy">
+<code class="sig-name descname">get_accuracy</code><span class="sig-paren">(</span><em class="sig-param">y_tilde</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/lstm.html#BiLSTM.get_accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.lstm.BiLSTM.get_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the accuracy from a set of predictions and gold labels.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The resulting accuracy does not count <cite>&lt;pad&gt;</cite> tokens.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_tilde</strong> (<em>torch.tensor</em>) – predictions.</p></li>
+<li><p><strong>y</strong> (<em>torch.tensor</em>) – gold labels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the global accuracy, of shape 0.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>torch.tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.lstm.BiLSTM.init_embeddings">
+<code class="sig-name descname">init_embeddings</code><span class="sig-paren">(</span><em class="sig-param">embeddings</em>, <em class="sig-param">ignore_index=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/lstm.html#BiLSTM.init_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.lstm.BiLSTM.init_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the embeddings vectors from pre-trained embeddings vectors.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By default, the embeddings will set to zero the tokens at indices 0 and 1,
+that should corresponds to &lt;pad&gt; and &lt;unk&gt;.</p>
+</div>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># TEXT: field used to extract text, sentences etc.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UNK_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">unk_token</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pretrained_embeddings</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">vectors</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">init_embeddings</span><span class="p">(</span><span class="n">pretrained_embeddings</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="p">[</span><span class="n">PAD_IDX</span><span class="p">,</span> <span class="n">UNK_IDX</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>embeddings</strong> (<em>torch.tensor</em>) – pre-trained word embeddings, of shape <code class="docutils literal notranslate"><span class="pre">(input_dim,</span> <span class="pre">embedding_dim)</span></code>.</p></li>
+<li><p><strong>ignore_index</strong> (<em>int</em><em> or </em><em>iterable</em>) – if not <cite>None</cite>, set to zeros tensors at the indices provided.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.lstm.BiLSTM.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">criterion</em>, <em class="sig-param">optimizer</em>, <em class="sig-param">verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/lstm.html#BiLSTM.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.lstm.BiLSTM.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – if <cite>True</cite> display a progress bar.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.nn.models.gru">
+<span id="sentarget-nn-models-gru"></span><h2>sentarget.nn.models.gru<a class="headerlink" href="#module-sentarget.nn.models.gru" title="Permalink to this headline">¶</a></h2>
+<p>The Bilinear Recurrent network is a vanilla model used for targeted sentiment analysis,
+and compared to more elaborated models.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defines the shape of the models</span>
+<span class="n">INPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">HIDDEN_DIM</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">OUTPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">BIDIRECTIONAL</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">DROPOUT</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">BiGRU</span><span class="p">(</span><span class="n">INPUT_DIM</span><span class="p">,</span>
+               <span class="n">EMBEDDING_DIM</span><span class="p">,</span>
+               <span class="n">HIDDEN_DIM</span><span class="p">,</span>
+               <span class="n">OUTPUT_DIM</span><span class="p">,</span>
+               <span class="n">N_LAYERS</span><span class="p">,</span>
+               <span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+               <span class="n">DROPOUT</span><span class="p">,</span>
+               <span class="n">PAD_IDX</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.nn.models.gru.BiGRU">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.nn.models.gru.</code><code class="sig-name descname">BiGRU</code><span class="sig-paren">(</span><em class="sig-param">input_dim</em>, <em class="sig-param">embedding_dim=100</em>, <em class="sig-param">hidden_dim=128</em>, <em class="sig-param">output_dim=7</em>, <em class="sig-param">n_layers=2</em>, <em class="sig-param">bidirectional=True</em>, <em class="sig-param">dropout=0.25</em>, <em class="sig-param">pad_idx_text=1</em>, <em class="sig-param">unk_idx_text=0</em>, <em class="sig-param">pad_idx_label=0</em>, <em class="sig-param">embeddings=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/gru.html#BiGRU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.gru.BiGRU" title="Permalink to this definition">¶</a></dt>
+<dd><p>This bilinear model uses the <cite>sklearn</cite> template, i.e. with a fit method within the module.</p>
+<p>Make sure to add a criterion and optimizer when loading a model.</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">input_dim</span></code> (int): input dimension, i.e. dimension of the incoming words.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">embedding_dim</span></code> (int): dimension of the word embeddigns.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">hidden_dim</span></code> (int): dimmension used to map words with the recurrent unit.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">output_dim</span></code> (int): dimension used for classification. This one should be equals to the number of classes.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">n_layers</span></code> (int): number of recurrent layers.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">bidirectional</span></code> (bool): if <cite>True</cite>, set two recurrent layers in the opposite direction.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">dropout</span></code> (float): ratio of connections set to zeros.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">pad_idx_text</span></code> (int): index of the <cite>&lt;pad&gt;</cite> text token.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">pad_idx_label</span></code> (int): index of the <cite>&lt;pad&gt;</cite> label token.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">embeddings</span></code> (torch.Tensor): pretrained embeddings, of shape <code class="docutils literal notranslate"><span class="pre">(input_dim,</span> <span class="pre">embeddings_dim)</span></code>.</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">INPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HIDDEN_DIM</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OUTPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BIDIRECTIONAL</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">DROPOUT</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX_TEXT</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX_LABEL</span> <span class="o">=</span> <span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">LABEL</span><span class="o">.</span><span class="n">unk_token</span><span class="p">]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">BiGRU</span><span class="p">(</span><span class="n">INPUT_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">EMBEDDING_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">HIDDEN_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">OUTPUT_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">N_LAYERS</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">DROPOUT</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">pad_idx_text</span><span class="o">=</span><span class="n">PAD_IDX_TEXT</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">pad_idx_label</span><span class="o">=</span><span class="n">PAD_IDX_LABEL</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="sentarget.nn.models.gru.BiGRU.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">criterion</em>, <em class="sig-param">optimizer</em>, <em class="sig-param">verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/gru.html#BiGRU.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.gru.BiGRU.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – if <cite>True</cite> display a progress bar.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.gru.BiGRU.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">length</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/gru.html#BiGRU.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.gru.BiGRU.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>One forward step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The forward propagation requires text’s length, so a padded pack can be applied to batches.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>torch.tensor</em>) – text composed of word embeddings vectors from one batch.</p></li>
+<li><p><strong>length</strong> (<em>torch.tensor</em>) – vector indexing the lengths of <cite>text</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">data_iterator</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">text</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">text</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.gru.BiGRU.get_accuracy">
+<code class="sig-name descname">get_accuracy</code><span class="sig-paren">(</span><em class="sig-param">y_tilde</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/gru.html#BiGRU.get_accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.gru.BiGRU.get_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the accuracy from a set of predictions and gold labels.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The resulting accuracy does not count <cite>&lt;pad&gt;</cite> tokens.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_tilde</strong> (<em>torch.tensor</em>) – predictions.</p></li>
+<li><p><strong>y</strong> (<em>torch.tensor</em>) – gold labels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the global accuracy, of shape 0.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>torch.tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.gru.BiGRU.init_embeddings">
+<code class="sig-name descname">init_embeddings</code><span class="sig-paren">(</span><em class="sig-param">embeddings</em>, <em class="sig-param">ignore_index=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/gru.html#BiGRU.init_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.gru.BiGRU.init_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the embeddings vectors from pre-trained embeddings vectors.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By default, the embeddings will set to zero the tokens at indices 0 and 1,
+that should corresponds to &lt;pad&gt; and &lt;unk&gt;.</p>
+</div>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># TEXT: field used to extract text, sentences etc.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UNK_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">unk_token</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pretrained_embeddings</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">vectors</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">init_embeddings</span><span class="p">(</span><span class="n">pretrained_embeddings</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="p">[</span><span class="n">PAD_IDX</span><span class="p">,</span> <span class="n">UNK_IDX</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>embeddings</strong> (<em>torch.tensor</em>) – pre-trained word embeddings, of shape <code class="docutils literal notranslate"><span class="pre">(input_dim,</span> <span class="pre">embedding_dim)</span></code>.</p></li>
+<li><p><strong>ignore_index</strong> (<em>int</em><em> or </em><em>iterable</em>) – if not <cite>None</cite>, set to zeros tensors at the indices provided.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.nn.models.gru.BiGRU.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">iterator</em>, <em class="sig-param">criterion</em>, <em class="sig-param">optimizer</em>, <em class="sig-param">verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/nn/models/gru.html#BiGRU.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.nn.models.gru.BiGRU.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train one time the model on iterator data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>Iterator</em>) – iterator containing batch samples of data.</p></li>
+<li><p><strong>criterion</strong> (<em>Loss</em>) – loss function to measure scores.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer used during training to update weights.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – if <cite>True</cite> display a progress bar.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the performance and metrics of the training session.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="sentarget-metrics">
+<h1>sentarget.metrics<a class="headerlink" href="#sentarget-metrics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-sentarget.metrics.confusion">
+<span id="sentarget-metrics-confusion"></span><h2>sentarget.metrics.confusion<a class="headerlink" href="#module-sentarget.metrics.confusion" title="Permalink to this headline">¶</a></h2>
+<p>Defines a <code class="docutils literal notranslate"><span class="pre">`ConfusionMatrix`</span></code>, used to compute scores (True Positive, False Negative etc.).</p>
+<img alt="../_images/confusion_matrix.png" src="../_images/confusion_matrix.png" />
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a confusion matrix and ignore the labels</span>
+<span class="c1"># associated to &lt;unk&gt; and &lt;pad&gt;.</span>
+<span class="n">confusion</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">unk_idx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pad_idx</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Update the confusion matrix with a list of predictions and labels</span>
+<span class="n">confusion</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">gold_labels</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># Get the global accuracy, precision, scores from attributes or methods</span>
+<span class="n">confusion</span><span class="o">.</span><span class="n">accuracy</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.metrics.confusion.</code><code class="sig-name descname">ConfusionMatrix</code><span class="sig-paren">(</span><em class="sig-param">labels=None</em>, <em class="sig-param">data=None</em>, <em class="sig-param">names=None</em>, <em class="sig-param">axis_label=0</em>, <em class="sig-param">axis_pred=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="docutils literal notranslate"><span class="pre">`ConfusionMatrix`</span></code> is a matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>, used to index predictions <span class="math notranslate nohighlight">\(p \in C\)</span>
+regarding their gold labels (or truth labels).</p>
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.flatten">
+<code class="sig-name descname">flatten</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.flatten"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flatten a confusion matrix to retrieve its prediction and gold labels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.normalize">
+<code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nomalize the confusion <code class="docutils literal notranslate"><span class="pre">matrix</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\text{Norm}(Confusion) = \frac{Confusion}{sum(Confusion)}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The operation is not inplace, and thus does not modify the attribute <code class="docutils literal notranslate"><span class="pre">`matrix`</span></code>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>normalized confusion matrix.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param">names=None</em>, <em class="sig-param">normalize=False</em>, <em class="sig-param">cmap='Blues'</em>, <em class="sig-param">cbar=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the <code class="docutils literal notranslate"><span class="pre">matrix</span></code> in a new figure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><cite>plot</cite> is compatible with matplotlib 3.1.1.
+If you are using an older version, the display may change (version &lt; 3.0).</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labels</strong> (<em>list</em>) – list of ordered names corresponding to the indices used as gold labels.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code> normalize the <code class="docutils literal notranslate"><span class="pre">matrix</span></code>.</p></li>
+<li><p><strong>cmap</strong> (<em>string</em><em> or </em><em>matplotlib.pyplot.cmap</em>) – heat map colors.</p></li>
+<li><p><strong>cbar</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code>, display the colorbar associated to the heat map plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>axes corresponding to the plot.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>matplotlib.Axes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.to_dataframe">
+<code class="sig-name descname">to_dataframe</code><span class="sig-paren">(</span><em class="sig-param">names=None</em>, <em class="sig-param">normalize=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.to_dataframe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.to_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the <code class="docutils literal notranslate"><span class="pre">ConfusionMatrix</span></code> to a <cite>DataFrame</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>names</strong> (<em>list</em>) – list containing the ordered names of the indices used as gold labels.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code>, normalize the <code class="docutils literal notranslate"><span class="pre">matrix</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the <code class="docutils literal notranslate"><span class="pre">ConfusionMatrix</span></code> to a <cite>dict</cite>.</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">global</span> <span class="pre">accuracy</span></code> (float): accuracy obtained on all classes.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">sensitivity</span></code> (float): sensitivity obtained on all classes.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code> (float): precision obtained on all classes.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">specificity</span></code> (float): specificity obtained on all classes.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">confusion</span></code> (list): confusion matrix obtained on all classes.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">gold_labels</em>, <em class="sig-param">predictions</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the confusion matrix from a list of predictions, with their respective gold labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gold_labels</strong> (<em>list</em>) – a list of predictions.</p></li>
+<li><p><strong>predictions</strong> (<em>list</em>) – respective gold labels (or truth labels)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.metrics.confusion.ConfusionMatrix.zeros">
+<code class="sig-name descname">zeros</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/confusion.html#ConfusionMatrix.zeros"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.confusion.ConfusionMatrix.zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zeros the <code class="docutils literal notranslate"><span class="pre">`matrix`</span></code>. Can be used to empty memory without removing the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None. Inplace operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.metrics.functional">
+<span id="sentarget-metrics-functional"></span><h2>sentarget.metrics.functional<a class="headerlink" href="#module-sentarget.metrics.functional" title="Permalink to this headline">¶</a></h2>
+<p>Elementary functions used for statistical reports.</p>
+<dl class="function">
+<dt id="sentarget.metrics.functional.accuracy">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">accuracy</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Per class accuracy from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[ACC(M) = \frac{TP(M) + TN(M)}{TP(M) + TN(M) + FP(M) + FN(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.false_discovery_rate">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">false_discovery_rate</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#false_discovery_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.false_discovery_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>False discovery rate from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[FDR(M) = \frac{FP(M)}{FP(M) + TP(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.false_negative">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">false_negative</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#false_negative"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.false_negative" title="Permalink to this definition">¶</a></dt>
+<dd><p>False negatives values from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[FN(M) = \sum_{j=0}^{C-1}{M_j} - \text{Diag}(M)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.false_negative_rate">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">false_negative_rate</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#false_negative_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.false_negative_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>False negative rate from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[FNR(M) = \frac{FN(M)}{FN(M) + TP(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.false_positive">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">false_positive</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#false_positive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.false_positive" title="Permalink to this definition">¶</a></dt>
+<dd><p>False positives values from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[FP(M) = \sum_{i=0}^{C-1}{M_i} - \text{Diag}(M)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.false_positive_rate">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">false_positive_rate</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#false_positive_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.false_positive_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>False positive rate from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[FPR(M) = \frac{FP(M)}{FP(M) + FN(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.flatten_matrix">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">flatten_matrix</code><span class="sig-paren">(</span><em class="sig-param">matrix</em>, <em class="sig-param">axis_label=0</em>, <em class="sig-param">axis_pred=1</em>, <em class="sig-param">map=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#flatten_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.flatten_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flatten a confusion matrix to retrieve its prediction and gold labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p></li>
+<li><p><strong>axis_label</strong> (<em>int</em>) – axis index corresponding to the gold labels.</p></li>
+<li><p><strong>axis_pred</strong> (<em>int</em>) – axis index corresponding to the predictions.</p></li>
+<li><p><strong>map</strong> (<em>dict</em>) – dictionary to map indices to label.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>gold labels and predictions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.negative_predictive_value">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">negative_predictive_value</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#negative_predictive_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.negative_predictive_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative predictive value from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[NPV(M) = \frac{TN(M)}{TN(M) + FN(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.positive_predictive_value">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">positive_predictive_value</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#positive_predictive_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.positive_predictive_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positive predictive value from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[PPV(M) = \frac{TP(M)}{TP(M) + FP(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.true_negative">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">true_negative</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#true_negative"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.true_negative" title="Permalink to this definition">¶</a></dt>
+<dd><p>True negatives values from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[TN(M) = \sum_{i=0}^{C-1}{\sum_{j=0}^{C-1}{M_{i, j}}} - FN(M) + FP(M) + TP(M)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.true_negative_rate">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">true_negative_rate</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#true_negative_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.true_negative_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>True negative rate from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[TNR(M) = \frac{TN(M)}{TN(M) + FP(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.true_positive">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">true_positive</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#true_positive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.true_positive" title="Permalink to this definition">¶</a></dt>
+<dd><p>True positive values from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[TP(M) = \text{Diag}(M)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.metrics.functional.true_positive_rate">
+<code class="sig-prename descclassname">sentarget.metrics.functional.</code><code class="sig-name descname">true_positive_rate</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/metrics/functional.html#true_positive_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.metrics.functional.true_positive_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>True positive rate from a confusion matrix.</p>
+<div class="math notranslate nohighlight">
+\[TPR(M) = \frac{TP(M)}{TP(M) + FN(M)}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy.ndarray</em>) – confusion matrix of shape <span class="math notranslate nohighlight">\((C, C)\)</span>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="sentarget-tuner">
+<h1>sentarget.tuner<a class="headerlink" href="#sentarget-tuner" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-sentarget.tuner.tuner">
+<span id="sentarget-tuner-tuner"></span><h2>sentarget.tuner.tuner<a class="headerlink" href="#module-sentarget.tuner.tuner" title="Permalink to this headline">¶</a></h2>
+<p>Hyperparameters optimization using a grid search algorithm.
+Basically, you need to provide a set of parameters that will be modified.
+The grid search will run on all permutations from the set of parameters provided.
+Usually, you modify the hyperparameters and models’ modules (ex, dropout etc.).
+In addition, if you are using custom losses or optimizer that needs additional arguments / parameters,
+you can provide them through the specific dictionaries (see the documentation of <code class="docutils literal notranslate"><span class="pre">Tuner</span></code>).</p>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hyper parameters to tune</span>
+<span class="n">params_hyper</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;epochs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">150</span><span class="p">],</span>
+                    <span class="s1">&#39;lr&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>     <span class="c1"># Make sure to convert it to a list (for saving after)</span>
+                <span class="p">}</span>
+
+<span class="c1"># Parameters affecting the models</span>
+<span class="n">params_model</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">BiLSTM</span><span class="p">]</span>
+                    <span class="s1">&#39;hidden_dim&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">],</span>      <span class="c1"># Model attribute</span>
+                    <span class="s1">&#39;n_layers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>                   <span class="c1"># Model attribute</span>
+                    <span class="s1">&#39;bidirectional&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>          <span class="c1"># Model attribute</span>
+                    <span class="s1">&#39;LSTM.dropout&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span>    <span class="c1"># Modify all LSTM dropout</span>
+                    <span class="c1"># ...</span>
+                <span class="p">}</span>
+
+<span class="n">params_loss</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">CrossEntropyLoss</span><span class="p">]</span>
+                <span class="p">}</span>
+
+<span class="n">params_optim</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">Adam</span><span class="p">]</span>
+                <span class="p">}</span>
+
+<span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span><span class="n">params_hyper</span><span class="p">,</span> <span class="n">params_loss</span><span class="o">=</span><span class="n">params_loss</span><span class="p">,</span> <span class="n">params_optim</span><span class="o">=</span><span class="n">params_optim</span><span class="p">)</span>
+
+<span class="c1"># Grid Search</span>
+<span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.tuner.tuner.Tuner">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.tuner.tuner.</code><code class="sig-name descname">Tuner</code><span class="sig-paren">(</span><em class="sig-param">params_hyper=None</em>, <em class="sig-param">params_model=None</em>, <em class="sig-param">params_loss=None</em>, <em class="sig-param">params_optim=None</em>, <em class="sig-param">options=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/tuner.html#Tuner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.tuner.Tuner" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">Tuner</span></code> class is used for hyper parameters tuning.
+From a set of models and parameters to tune, this class will look at the best model’s performance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To facilitate the search and hyperameters tuning, it is recommended to use the
+<code class="docutils literal notranslate"><span class="pre">sentarget.nn.models.Model</span></code> abstract class as parent class for all of your models.</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">hyper_params</span></code> (dict): dictionary of hyperparameters to tune.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">performance</span></code> (dict): dictionary of all models’ performances.</p></li>
+</ul>
+<dl class="method">
+<dt id="sentarget.tuner.tuner.Tuner.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">train_data</em>, <em class="sig-param">eval_data</em>, <em class="sig-param">verbose=True</em>, <em class="sig-param">saves=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/tuner.html#Tuner.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.tuner.Tuner.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the hyper parameters tuning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_data</strong> (<em>iterator</em>) – training dataset.</p></li>
+<li><p><strong>eval_data</strong> (<em>iterator</em>) – dev dataset.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code>, display a statistical log at each search.</p></li>
+<li><p><strong>saves</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code> saves all trained models.</p></li>
+<li><p><strong>dirsaves</strong> (<em>string</em>) – path to the saving directory.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sentarget.metrics</span> <span class="kn">import</span> <span class="n">Tuner</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sentarget.nn.models.lstm</span> <span class="kn">import</span> <span class="n">BiLSTM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sentarget.nn.models.gru</span> <span class="kn">import</span> <span class="n">BiGRU</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Hyper parameters to tune</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>
+<span class="gp">... </span>                <span class="n">params_hyper</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>                              <span class="s1">&#39;epochs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>                              <span class="s1">&#39;lr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">],</span>
+<span class="gp">... </span>                              <span class="s1">&#39;vectors&#39;</span><span class="p">:</span> <span class="s1">&#39;model.txt&#39;</span>
+<span class="gp">... </span>                             <span class="p">}</span>
+<span class="gp">... </span>                <span class="n">params_model</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>                              <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">BiLSTM</span><span class="p">],</span>
+<span class="gp">... </span>                             <span class="p">}</span>
+<span class="gp">... </span>                <span class="n">params_loss</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>                             <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">],</span>
+<span class="gp">... </span>                             <span class="s1">&#39;ignore_index&#39;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="gp">... </span>                            <span class="p">}</span>
+<span class="gp">... </span>                <span class="n">params_optim</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>                              <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">]</span>
+<span class="gp">... </span>                            <span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># train_iterator = torchtext data iterato</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">,</span> <span class="n">valid_iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.tuner.tuner.Tuner.log_conf">
+<code class="sig-name descname">log_conf</code><span class="sig-paren">(</span><em class="sig-param">config_hyper={}</em>, <em class="sig-param">config_model={}</em>, <em class="sig-param">config_loss={}</em>, <em class="sig-param">config_optim={}</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/tuner.html#Tuner.log_conf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.tuner.Tuner.log_conf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a configuration log from the generated set of configurations files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_hyper</strong> (<em>dict</em>) – hyper parameters configuration file.</p></li>
+<li><p><strong>config_model</strong> (<em>dict</em>) – model parameters configuration file.</p></li>
+<li><p><strong>config_loss</strong> (<em>dict</em>) – loss parameters configuration file.</p></li>
+<li><p><strong>config_optim</strong> (<em>dict</em>) – optimizer parameters configuration file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configuration file representation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.tuner.tuner.Tuner.log_init">
+<code class="sig-name descname">log_init</code><span class="sig-paren">(</span><em class="sig-param">hyper</em>, <em class="sig-param">model</em>, <em class="sig-param">loss</em>, <em class="sig-param">optim</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/tuner.html#Tuner.log_init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.tuner.Tuner.log_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a general configuration log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hyper</strong> (<em>int</em>) – number of hyper parameters permutations.</p></li>
+<li><p><strong>model</strong> (<em>int</em>) – number of model parameters permutations.</p></li>
+<li><p><strong>loss</strong> (<em>int</em>) – number of loss parameters permutations.</p></li>
+<li><p><strong>optim</strong> (<em>int</em>) – number of optimizer parameters permutations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>general log.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.tuner.tuner.Tuner.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/tuner.html#Tuner.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.tuner.Tuner.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset all parameters to their default values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.tuner.tuner.Tuner.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">filename='gridsearch.json'</em>, <em class="sig-param">dirpath='.saves'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/tuner.html#Tuner.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.tuner.Tuner.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the performances as a json file, by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>string</em>) – name of the file to save.</p></li>
+<li><p><strong>dirpath</strong> (<em>string</em>) – path to the saving directory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.tuner.functional">
+<span id="sentarget-tuner-functional"></span><h2>sentarget.tuner.functional<a class="headerlink" href="#module-sentarget.tuner.functional" title="Permalink to this headline">¶</a></h2>
+<p>Optimization functions used for hyperparameters tuning.</p>
+<dl class="function">
+<dt id="sentarget.tuner.functional.init_cls">
+<code class="sig-prename descclassname">sentarget.tuner.functional.</code><code class="sig-name descname">init_cls</code><span class="sig-paren">(</span><em class="sig-param">class_instance</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/functional.html#init_cls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.functional.init_cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a class instance from a set of possible values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More parameters can be added than the object need. They will just not be used.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>class_instance</strong> (<em>class</em>) – class to initialize.</p></li>
+<li><p><strong>config</strong> (<em>dict</em>) – possible values of init parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>initialized object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.tuner.functional.tune">
+<code class="sig-prename descclassname">sentarget.tuner.functional.</code><code class="sig-name descname">tune</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/functional.html#tune"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.functional.tune" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the key is separated with a ‘.’, it means the first index is the module to change,
+then the attribute <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">'LSTM.dropout'</span></code> will modify only the dropout corresponding to <code class="docutils literal notranslate"><span class="pre">LSTM</span></code> layers</p>
+<p>The double underscore <code class="docutils literal notranslate"><span class="pre">__</span></code> is used to modify a specific attribute by its name (and not its type),
+like <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">'linear__in_features'</span></code> will modify only the <code class="docutils literal notranslate"><span class="pre">in_features</span></code> attribute from the
+<code class="docutils literal notranslate"><span class="pre">Linear</span></code> layer saved under the attribute <code class="docutils literal notranslate"><span class="pre">linear</span></code> of the custom model.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The operation modify the model inplace.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<a class="reference internal" href="#sentarget.nn.models.model.Model" title="sentarget.nn.models.model.Model"><em>Model</em></a>) – the model to tune its hyperparameters.</p></li>
+<li><p><strong>config</strong> (<em>dict</em>) – dictionary of parameters to change.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the configuration to apply to a model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sentarget.nn.models.lstm</span> <span class="kn">import</span> <span class="n">BiLSTM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Defines the shape of the models</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">INPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HIDDEN_DIM</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OUTPUT_DIM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BIDIRECTIONAL</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">DROPOUT</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PAD_IDX</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">TEXT</span><span class="o">.</span><span class="n">pad_token</span><span class="p">]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">BiLSTM</span><span class="p">(</span><span class="n">INPUT_DIM</span><span class="p">,</span>
+<span class="gp">... </span>              <span class="n">EMBEDDING_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">HIDDEN_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">OUTPUT_DIM</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">N_LAYERS</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">DROPOUT</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">PAD_IDX</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;LSTM.dropout&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tune</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.tuner.functional.tune_optimizer">
+<code class="sig-prename descclassname">sentarget.tuner.functional.</code><code class="sig-name descname">tune_optimizer</code><span class="sig-paren">(</span><em class="sig-param">optimizer</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/tuner/functional.html#tune_optimizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.tuner.functional.tune_optimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tune te defaults parameters for an optimizer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The operation modify directly the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> optimizer’s dictionary.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – optimizer to tune.</p></li>
+<li><p><strong>config</strong> (<em>dict</em>) – dictionary of new parameters to set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="sentarget-datasets">
+<h1>sentarget.datasets<a class="headerlink" href="#sentarget-datasets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-sentarget.datasets.norecfine">
+<span id="sentarget-datasets-norecfine"></span><h2>sentarget.datasets.norecfine<a class="headerlink" href="#module-sentarget.datasets.norecfine" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">NoReCfine</span></code> class defines the latest datasets used for targeted sentiment analysis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, download the training / dev / test data</span>
+<span class="n">train_data</span><span class="p">,</span> <span class="n">dev_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">NoReCfine</span><span class="o">.</span><span class="n">splits</span><span class="p">(</span><span class="n">train_data</span><span class="o">=</span><span class="s2">&quot;path_to_train&quot;</span><span class="p">,</span>
+                                                   <span class="n">dev_data</span><span class="o">=</span><span class="s2">&quot;path_to_eval&quot;</span><span class="p">,</span>
+                                                   <span class="n">test_data</span><span class="o">=</span><span class="s2">&quot;path_to_test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sentarget.datasets.norecfine.NoReCfine">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.datasets.norecfine.</code><code class="sig-name descname">NoReCfine</code><span class="sig-paren">(</span><em class="sig-param">*args: Any</em>, <em class="sig-param">**kwargs: Any</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/datasets/norecfine.html#NoReCfine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.datasets.norecfine.NoReCfine" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class defines the <code class="docutils literal notranslate"><span class="pre">NoReCfine</span></code> datasets,
+used on the paper <em>A Fine-grained Sentiment Dataset for Norwegian.</em></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.datasets.nonlpl">
+<span id="sentarget-datasets-nonlpl"></span><h2>sentarget.datasets.nonlpl<a class="headerlink" href="#module-sentarget.datasets.nonlpl" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">NoNLPL</span></code> is a dataset instance used to load pre-trained embeddings.</p>
+<dl class="class">
+<dt id="sentarget.datasets.nonlpl.NoNLPL">
+<em class="property">class </em><code class="sig-prename descclassname">sentarget.datasets.nonlpl.</code><code class="sig-name descname">NoNLPL</code><span class="sig-paren">(</span><em class="sig-param">filepath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/datasets/nonlpl.html#NoNLPL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.datasets.nonlpl.NoNLPL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Norwegian Bokmal NLPL dataset contains more than 1,000,000 pre-trained word embeddings from
+the norwegian language.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vectors</span> <span class="o">=</span> <span class="n">NoNLPL</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="sentarget.datasets.nonlpl.NoNLPL.download">
+<em class="property">classmethod </em><code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param">root</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/datasets/nonlpl.html#NoNLPL.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.datasets.nonlpl.NoNLPL.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download and unzip a web archive (.zip, .gz, or .tgz).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>root</strong> (<em>str</em>) – Folder to download data to.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Path to extracted dataset.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sentarget.datasets.nonlpl.NoNLPL.load">
+<em class="property">classmethod </em><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">data='model.txt'</em>, <em class="sig-param">root='.vector_cache'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/datasets/nonlpl.html#NoNLPL.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.datasets.nonlpl.NoNLPL.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load pre-trained word embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>sting</em>) – string of the data containing the pre-trained word embeddings.</p></li>
+<li><p><strong>root</strong> (<em>string</em>) – root folder where vectors are saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>loaded dataset.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#sentarget.datasets.nonlpl.NoNLPL" title="sentarget.datasets.nonlpl.NoNLPL">NoNLPL</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="sentarget-utils">
+<h1>sentarget.utils<a class="headerlink" href="#sentarget-utils" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-sentarget.utils.functions">
+<span id="sentarget-utils-functions"></span><h2>sentarget.utils.functions<a class="headerlink" href="#module-sentarget.utils.functions" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions.</p>
+<dl class="function">
+<dt id="sentarget.utils.functions.append2dict">
+<code class="sig-prename descclassname">sentarget.utils.functions.</code><code class="sig-name descname">append2dict</code><span class="sig-paren">(</span><em class="sig-param">main_dict</em>, <em class="sig-param">*dicts</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/functions.html#append2dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.functions.append2dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append key values to another dict with the same keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>main_dict</strong> (<em>dict</em>) – dictionary where values will be added.</p></li>
+<li><p><strong>*dicts</strong> (<em>dict</em>) – dictionaries to extract values and append to another one.
+These dictionaries should have the same keys as dict.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">append2dict</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dict1</span>
+<span class="go">    {&quot;key1&quot;: [0], &quot;key2&quot;: [1]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dict3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dict4</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">append2dict</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict3</span><span class="p">,</span> <span class="n">dict4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dict1</span>
+<span class="go">    {&quot;key1&quot;: [0, 2, 4], &quot;key2&quot;: [1, 3, 5]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.functions.permutation_dict">
+<code class="sig-prename descclassname">sentarget.utils.functions.</code><code class="sig-name descname">permutation_dict</code><span class="sig-paren">(</span><em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/functions.html#permutation_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.functions.permutation_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of configuration files used to tune a model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyper_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;dropout&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="s1">&#39;in_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="s1">&#39;out_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">permutation_dict</span><span class="p">(</span><span class="n">hyper_params</span><span class="p">)</span>
+<span class="go">    [{&#39;dropout&#39;: 0, &#39;in_features&#39;: 10, &#39;out_features&#39;: 20},</span>
+<span class="go">     {&#39;dropout&#39;: 0, &#39;in_features&#39;: 10, &#39;out_features&#39;: 30},</span>
+<span class="go">     {&#39;dropout&#39;: 0, &#39;in_features&#39;: 10, &#39;out_features&#39;: 40},</span>
+<span class="go">     {&#39;dropout&#39;: 0, &#39;in_features&#39;: 10, &#39;out_features&#39;: 50},</span>
+<span class="go">     {&#39;dropout&#39;: 0, &#39;in_features&#39;: 20, &#39;out_features&#39;: 20},</span>
+<span class="go">     {&#39;dropout&#39;: 0, &#39;in_features&#39;: 20, &#39;out_features&#39;: 30},</span>
+<span class="go">     ...</span>
+<span class="go">    ]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.functions.rgetattr">
+<code class="sig-prename descclassname">sentarget.utils.functions.</code><code class="sig-name descname">rgetattr</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">attr</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/functions.html#rgetattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.functions.rgetattr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute recursively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>object</em>) – object to get the attribute.</p></li>
+<li><p><strong>attr</strong> (<em>string</em>) – path to the attribute.</p></li>
+<li><p><strong>*args</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>attribute</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.functions.rsetattr">
+<code class="sig-prename descclassname">sentarget.utils.functions.</code><code class="sig-name descname">rsetattr</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">attr</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/functions.html#rsetattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.functions.rsetattr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute recursively.</p>
+<p>..note</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Attributes should be split with a dot ``.``.
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>object</em>) – object to set the attribute.</p></li>
+<li><p><strong>attr</strong> (<em>string</em>) – path to the attribute.</p></li>
+<li><p><strong>val</strong> (<em>value</em>) – value to set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.functions.serialize_dict">
+<code class="sig-prename descclassname">sentarget.utils.functions.</code><code class="sig-name descname">serialize_dict</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/functions.html#serialize_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.functions.serialize_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize recursively a dict to another dict composed of basic python object (list, dict, int, float, str…)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – dict to serialize</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tensor&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span>
+<span class="gp">... </span>        <span class="s1">&#39;sub_tensor&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])],</span>
+<span class="gp">... </span>        <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serialize_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">    {&#39;tensor&#39;: None,</span>
+<span class="go">     &#39;sub_tensor&#39;: [],</span>
+<span class="go">     &#39;data&#39;: [1, 2, 3, 4, 5],</span>
+<span class="go">     &#39;num&#39;: 1}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.functions.serialize_list">
+<code class="sig-prename descclassname">sentarget.utils.functions.</code><code class="sig-name descname">serialize_list</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/functions.html#serialize_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.functions.serialize_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize recursively a list to another list composed of basic python object (list, dict, int, float, str…)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>list</em>) – list to serialize</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serialize_list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">    [1, 2, 3, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serialize_list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">    []</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serialize_list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">    [1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.utils.display">
+<span id="sentarget-utils-display"></span><h2>sentarget.utils.display<a class="headerlink" href="#module-sentarget.utils.display" title="Permalink to this headline">¶</a></h2>
+<p>This module defines basic function to render a simulation, like progress bar and statistics table.</p>
+<dl class="function">
+<dt id="sentarget.utils.display.describe_dict">
+<code class="sig-prename descclassname">sentarget.utils.display.</code><code class="sig-name descname">describe_dict</code><span class="sig-paren">(</span><em class="sig-param">state_dict</em>, <em class="sig-param">key_length=50</em>, <em class="sig-param">show_iter=False</em>, <em class="sig-param">capitalize=False</em>, <em class="sig-param">pad=False</em>, <em class="sig-param">sep_key='</em>, <em class="sig-param">'</em>, <em class="sig-param">sep_val='='</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/display.html#describe_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.display.describe_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describe and render a dictionary. Usually, this function is called on a <code class="docutils literal notranslate"><span class="pre">Solver</span></code> state dictionary,
+and merged with a progress bar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state_dict</strong> (<em>dict</em>) – the dictionary to showcase.</p></li>
+<li><p><strong>key_length</strong> (<em>int</em>) – number of letter from a string name to show.</p></li>
+<li><p><strong>show_iter</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code>, show iterable. Note that this may destroy the rendering.</p></li>
+<li><p><strong>capitalize</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code> will capitalize the keys.</p></li>
+<li><p><strong>pad</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">True</span></code>, will pad the displayed number up to 4 characters.</p></li>
+<li><p><strong>sep_key</strong> (<em>string</em>) – key separator.</p></li>
+<li><p><strong>sep_val</strong> (<em>string</em>) – value separator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the dictionary to render.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.display.get_time">
+<code class="sig-prename descclassname">sentarget.utils.display.</code><code class="sig-name descname">get_time</code><span class="sig-paren">(</span><em class="sig-param">start_time</em>, <em class="sig-param">end_time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/display.html#get_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.display.get_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ellapsed time in minutes and seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_time</strong> (<em>float</em>) – strarting time</p></li>
+<li><p><strong>end_time</strong> (<em>float</em>) – ending time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>elapsed time in minutes
+elapsed_secs (float): elapsed time in seconds.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>elapsed_mins (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.display.progress_bar">
+<code class="sig-prename descclassname">sentarget.utils.display.</code><code class="sig-name descname">progress_bar</code><span class="sig-paren">(</span><em class="sig-param">current_index</em>, <em class="sig-param">max_index</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">suffix=None</em>, <em class="sig-param">start_time=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/display.html#progress_bar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.display.progress_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a progress bar and duration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_index</strong> (<em>int</em>) – current state index (or epoch number).</p></li>
+<li><p><strong>max_index</strong> (<em>int</em>) – maximal numbers of state.</p></li>
+<li><p><strong>prefix</strong> (<em>str</em><em>, </em><em>optional</em>) – prefix of the progress bar. The default is None.</p></li>
+<li><p><strong>suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – suffix of the progress bar. The default is None.</p></li>
+<li><p><strong>start_time</strong> (<em>float</em><em>, </em><em>optional</em>) – starting time of the progress bar. If not None, it will display the time
+spent from the beginning to the current state. The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None. Display the progress bar in the console.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sentarget.utils.display.stats_dict">
+<code class="sig-prename descclassname">sentarget.utils.display.</code><code class="sig-name descname">stats_dict</code><span class="sig-paren">(</span><em class="sig-param">state_dict</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/display.html#stats_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.display.stats_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describe statistical information from a dictionary composed of lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state_dict</strong> (<em>dict</em>) – dictionary were cumulative information are stored.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sentarget.utils.decorator">
+<span id="sentarget-utils-decorator"></span><h2>sentarget.utils.decorator<a class="headerlink" href="#module-sentarget.utils.decorator" title="Permalink to this headline">¶</a></h2>
+<p>This module defines decorators for functions and methods.</p>
+<dl class="function">
+<dt id="sentarget.utils.decorator.deprecated">
+<code class="sig-prename descclassname">sentarget.utils.decorator.</code><code class="sig-name descname">deprecated</code><span class="sig-paren">(</span><em class="sig-param">reason</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sentarget/utils/decorator.html#deprecated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sentarget.utils.decorator.deprecated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated decorator.</p>
+<p>This is a decorator which can be used to mark functions
+as deprecated. It will result in a warning being emitted
+when the function is used.
+![See this post on StackOverflow](<a class="reference external" href="https://stackoverflow.com/questions/2536307/decorators-in-the-python-standard-lib-deprecated-specifically">https://stackoverflow.com/questions/2536307/decorators-in-the-python-standard-lib-deprecated-specifically</a>)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="gridsearch.html" class="btn btn-neutral" title="Tuner" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arthur Dujardin, Lotte Boerboom.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">sentarget</a></li>
+<li><a class="reference internal" href="#sentarget-nn">sentarget.nn</a><ul>
+<li><a class="reference internal" href="#module-sentarget.nn.solver">sentarget.nn.solver</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sentarget-nn-models">sentarget.nn.models</a><ul>
+<li><a class="reference internal" href="#module-sentarget.nn.models.model">sentarget.nn.models.model</a></li>
+<li><a class="reference internal" href="#module-sentarget.nn.models.lstm">sentarget.nn.models.lstm</a></li>
+<li><a class="reference internal" href="#module-sentarget.nn.models.gru">sentarget.nn.models.gru</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sentarget-metrics">sentarget.metrics</a><ul>
+<li><a class="reference internal" href="#module-sentarget.metrics.confusion">sentarget.metrics.confusion</a></li>
+<li><a class="reference internal" href="#module-sentarget.metrics.functional">sentarget.metrics.functional</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sentarget-tuner">sentarget.tuner</a><ul>
+<li><a class="reference internal" href="#module-sentarget.tuner.tuner">sentarget.tuner.tuner</a></li>
+<li><a class="reference internal" href="#module-sentarget.tuner.functional">sentarget.tuner.functional</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sentarget-datasets">sentarget.datasets</a><ul>
+<li><a class="reference internal" href="#module-sentarget.datasets.norecfine">sentarget.datasets.norecfine</a></li>
+<li><a class="reference internal" href="#module-sentarget.datasets.nonlpl">sentarget.datasets.nonlpl</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sentarget-utils">sentarget.utils</a><ul>
+<li><a class="reference internal" href="#module-sentarget.utils.functions">sentarget.utils.functions</a></li>
+<li><a class="reference internal" href="#module-sentarget.utils.display">sentarget.utils.display</a></li>
+<li><a class="reference internal" href="#module-sentarget.utils.decorator">sentarget.utils.decorator</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+         <script src="../_static/language_data.js"></script>
+         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Check the GitHub page and contribute to the project</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/source/package.html">View GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://pages.github.uio.no/arthurd/in5550-exam/" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://pages.github.uio.no/arthurd/in5550-exam/">PyTorch</a></li>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a></li>
+            <li><a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a></li>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a></li>
+            <li><a href="https://github.uio.no/arthurd/in5550-exam/issues" target="_blank">Github Issues</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/pytorch-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://pages.github.uio.no/arthurd/in5550-exam/" aria-label="PyTorch"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a>
+          </li>
+
+
+          <li>
+            <a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://github.uio.no/arthurd/in5550-exam">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+=========
+NoReCfine
+=========
+
+For this targeted sentiment analysis, we used a training dataset in Norwegian with corresponding word embeddings.
+
+We will be working with the recently released norecfine_,
+a dataset for finegrained sentiment analysis in Norwegian.
+The texts in the dataset have been annotated with respect to polar expressions, targets and holders of opinion but
+we will here be focusing on identification of targets and their polarity only.
+The underlying texts are taken from a corpus of professionally authored reviews
+from multiple news-sources and across a wide variety of domains, including
+literature, games, music, products, movies and more.
+
+
+.. _norecfine: https://www.researchgate.net/publication/337671672_A_Fine-grained_Sentiment_Dataset_for_Norwegian
+
+
+====================
+NLPL Word Embeddings
+====================
+
+the word embeddings used are taken from the nlpl_ datasets,
+using the *Norwegian-Bokmaal CoNLL17* corpus, with a vocabulary size of 1,182,371.
+
+.. _nlpl: http://vectors.nlpl.eu/repository/#

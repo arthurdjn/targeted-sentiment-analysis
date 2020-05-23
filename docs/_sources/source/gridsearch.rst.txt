@@ -1,0 +1,145 @@
+=====
+Tuner
+=====
+
+This section highlight the key point when using the built-in grid search algorithm.
+
+
+The tuner class is used to tweak (or *tune*) hyper parameters, or PyTorch's module.
+
+.. code-block:: python
+
+    from sentarget import Tuner
+
+
+    # Hyper parameters to tune
+    params = {'epochs': [150],                              # Number of epochs to try
+              'lr': np.arange(0.001, 0.3, 0.01).tolist(),   # Make sure to convert it to a list (for saving after)
+              'optimizer': ['torch.metrics.Adam'],
+              'criterion': ['torch.nn.CrossEntropyLoss']}
+
+    # Parameters affecting the models
+    params_model = {'hidden_dim': [100, 150, 200, 250],      # Model attribute
+                    'n_layers': [1, 2, 3],                   # Model attribute
+                    'bidirectional': [False, True],          # Model attribute
+                    'LSTM.dropout': [0.2, 0.3, 0.4, 0.6],    # Modify all LSTM dropout
+                    # some other inner parameters, depending on your models...
+                    }
+
+    # Default parameters that will be used to initialize the criterion and optimizer
+    params_loss = {'ignore_index': PAD_IDX}
+    params_optim = {}
+
+    tuner = Tuner(params, params_loss=params_loss, params_optim=params_optim)
+
+    # Run the grid Search
+    tuner.fit([sentarget.nn.models.gru.BiGRU, sentarget.nn.models.lstm.BiLSTM], train_iterator, eval_iterator)
+
+
+
+===========
+Grid Search
+===========
+
+From this class, you can create your own custom grid search function depending on how you preprocess the data:
+
+.. code-block:: python
+
+    import torch
+    from torchtext import data
+    from torchtext.vocab import Vectors
+
+    import sentarget
+    from sentarget import Tuner
+    from sentarget.datasets import NoReCfine
+
+
+    def gridsearch(models, params_hyper={}, params_model={}, params_optim={}, params_loss={}):
+        """Run the grid search algorithms on the Norwegian NoReCfine dataset provided.
+
+        Args:
+            options (dict): general options.
+            params_hyper (dict): hyper parameters to tune.
+            params_model (dict): model's parameters to tune.
+            params_optim (dict): optimizer parameters initialization, won't be tuned.
+            params_loss (dict): criterion parameters initialization, won't be tuned.
+
+        """
+
+        # 1/ Load the data
+        TEXT = data.Field(lower=False, include_lengths=True, batch_first=True)
+        LABEL = data.Field(batch_first=True, unk_token=None)
+        FIELDS = [("text", TEXT), ("label", LABEL)]
+        train_data, eval_data, test_data = NoReCfine.splits(FIELDS)
+
+        # 2/ Build the vocab
+        VOCAB_SIZE = 1_200_000
+        VECTORS = Vectors(name='model.txt', url='http://vectors.nlpl.eu/repository/20/58.zip')
+        TEXT.build_vocab(train_data, test_data, eval_data,
+                         max_size=VOCAB_SIZE,
+                         vectors=VECTORS,
+                         unk_init=torch.Tensor.normal_)
+        LABEL.build_vocab(train_data)
+
+        # 3/ Load iterators
+        BATCH_SIZE = params_hyper['batch_size']
+        device = torch.device('cpu')
+        train_iterator, eval_iterator, test_iterator = data.BucketIterator.splits((train_data, eval_data, test_data),
+                                                                                  batch_size=BATCH_SIZE,
+                                                                                  sort_within_batch=True,
+                                                                                  device=device)
+
+        # ...and initialize the embedding layer
+        params_model['embeddings'] = TEXT.vocab.vectors
+
+        # 4/ Initialize the grid search template
+        tuner = Tuner(params_hyper, params_model=params_model, params_loss=params_loss, params_optim=params_optim)
+
+        # ...and search !
+        tuner.fit(models, train_iterator, eval_iterator, verbose=True, saves=True)
+        tuner.save()
+
+
+And let's try it out:
+
+.. code-block:: python
+
+    # Test these models
+    models = [sentarget.nn.models.lstm.BiLSTM, sentarget.nn.models.gru.BiGRU]
+
+    # Hyper parameters to tune
+    params_hyper = {
+                        # Default parameters
+                        'epochs':                    [50, 100],
+                        'batch_size':                [64, 128],
+                        'lr':                        [0.01, 0.05, 0.1, 0.2],
+                        'vectors_name':              'model.txt',
+                        'vectors_url':               'http://vectors.nlpl.eu/repository/20/58.zip',
+                        'use_pretrained_embeddings': True,
+                        'optimizer':                 [torch.optim.Adam],
+                        'criterion':                 [torch.nn.CrossEntropyLoss]
+                    }
+
+    # Parameters affecting the model
+    params_model = {'input_dim':             [len(TEXT.vocab)],     # Should not be modified
+                    'embedding_dim':         [100],                 # Should not be modified
+                    'hidden_dim':            [100, 150, 200],
+                    'output_dim':            [len(LABEL.vocab)],    # Should not be modified
+                    'n_layers':              [2, 3],
+                    'bidirectional':         [True, False],
+                    'dropout':               [0.1, 0.2, 0.3, 0.4],
+                    'pad_idx_text':          [PAD_IDX_TEXT],        # Should not be modified
+                    'pad_idx_label':         [PAD_IDX_LABEL],       # Should not be modified
+                    'unk_idx_text':          [UNK_IDX_TEXT],        # Should not be modified
+                    'embeddings':            [EMBEDDINGS]}          # Should not be modified
+
+    # Parameters used to initialize the loss and optimizer
+    params_loss = {'ignore_index': PAD_IDX_LABEL}
+    params_optim = {}
+
+    # Run the grid search
+    gridsearch(models,
+               params_hyper = params_hyper,
+               params_model = params_model,
+               params_loss = params_loss,
+               params_optim = params_optim)

@@ -1,0 +1,575 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tuner &mdash; SenTarget 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sentarget" href="package.html" />
+    <link rel="prev" title="Model" href="model.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://pages.github.uio.no/arthurd/in5550-exam/" aria-label="SenTarget"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://github.uio.no/arthurd/in5550-exam">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Set-up</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">NoReCfine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html#nlpl-word-embeddings">NLPL Word Embeddings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html#solver">Solver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Grid Search</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#grid-search">Grid Search</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="package.html">sentarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html#sentarget-nn">sentarget.nn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html#sentarget-nn-models">sentarget.nn.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html#sentarget-metrics">sentarget.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html#sentarget-tuner">sentarget.tuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html#sentarget-datasets">sentarget.datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html#sentarget-utils">sentarget.utils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Tuner</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/gridsearch.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="tuner">
+<h1>Tuner<a class="headerlink" href="#tuner" title="Permalink to this headline">¶</a></h1>
+<p>This section highlight the key point when using the built-in grid search algorithm.</p>
+<p>The tuner class is used to tweak (or <em>tune</em>) hyper parameters, or PyTorch’s module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sentarget</span> <span class="kn">import</span> <span class="n">Tuner</span>
+
+
+<span class="c1"># Hyper parameters to tune</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;epochs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">150</span><span class="p">],</span>                              <span class="c1"># Number of epochs to try</span>
+          <span class="s1">&#39;lr&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>   <span class="c1"># Make sure to convert it to a list (for saving after)</span>
+          <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;torch.metrics.Adam&#39;</span><span class="p">],</span>
+          <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;torch.nn.CrossEntropyLoss&#39;</span><span class="p">]}</span>
+
+<span class="c1"># Parameters affecting the models</span>
+<span class="n">params_model</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hidden_dim&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">],</span>      <span class="c1"># Model attribute</span>
+                <span class="s1">&#39;n_layers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>                   <span class="c1"># Model attribute</span>
+                <span class="s1">&#39;bidirectional&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>          <span class="c1"># Model attribute</span>
+                <span class="s1">&#39;LSTM.dropout&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span>    <span class="c1"># Modify all LSTM dropout</span>
+                <span class="c1"># some other inner parameters, depending on your models...</span>
+                <span class="p">}</span>
+
+<span class="c1"># Default parameters that will be used to initialize the criterion and optimizer</span>
+<span class="n">params_loss</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ignore_index&#39;</span><span class="p">:</span> <span class="n">PAD_IDX</span><span class="p">}</span>
+<span class="n">params_optim</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">params_loss</span><span class="o">=</span><span class="n">params_loss</span><span class="p">,</span> <span class="n">params_optim</span><span class="o">=</span><span class="n">params_optim</span><span class="p">)</span>
+
+<span class="c1"># Run the grid Search</span>
+<span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">([</span><span class="n">sentarget</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">gru</span><span class="o">.</span><span class="n">BiGRU</span><span class="p">,</span> <span class="n">sentarget</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">lstm</span><span class="o">.</span><span class="n">BiLSTM</span><span class="p">],</span> <span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="grid-search">
+<h1>Grid Search<a class="headerlink" href="#grid-search" title="Permalink to this headline">¶</a></h1>
+<p>From this class, you can create your own custom grid search function depending on how you preprocess the data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torchtext</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">from</span> <span class="nn">torchtext.vocab</span> <span class="kn">import</span> <span class="n">Vectors</span>
+
+<span class="kn">import</span> <span class="nn">sentarget</span>
+<span class="kn">from</span> <span class="nn">sentarget</span> <span class="kn">import</span> <span class="n">Tuner</span>
+<span class="kn">from</span> <span class="nn">sentarget.datasets</span> <span class="kn">import</span> <span class="n">NoReCfine</span>
+
+
+<span class="k">def</span> <span class="nf">gridsearch</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">params_hyper</span><span class="o">=</span><span class="p">{},</span> <span class="n">params_model</span><span class="o">=</span><span class="p">{},</span> <span class="n">params_optim</span><span class="o">=</span><span class="p">{},</span> <span class="n">params_loss</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="sd">&quot;&quot;&quot;Run the grid search algorithms on the Norwegian NoReCfine dataset provided.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        options (dict): general options.</span>
+<span class="sd">        params_hyper (dict): hyper parameters to tune.</span>
+<span class="sd">        params_model (dict): model&#39;s parameters to tune.</span>
+<span class="sd">        params_optim (dict): optimizer parameters initialization, won&#39;t be tuned.</span>
+<span class="sd">        params_loss (dict): criterion parameters initialization, won&#39;t be tuned.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># 1/ Load the data</span>
+    <span class="n">TEXT</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_lengths</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">LABEL</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">unk_token</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">FIELDS</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">LABEL</span><span class="p">)]</span>
+    <span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">NoReCfine</span><span class="o">.</span><span class="n">splits</span><span class="p">(</span><span class="n">FIELDS</span><span class="p">)</span>
+
+    <span class="c1"># 2/ Build the vocab</span>
+    <span class="n">VOCAB_SIZE</span> <span class="o">=</span> <span class="mi">1_200_000</span>
+    <span class="n">VECTORS</span> <span class="o">=</span> <span class="n">Vectors</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;model.txt&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://vectors.nlpl.eu/repository/20/58.zip&#39;</span><span class="p">)</span>
+    <span class="n">TEXT</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span>
+                     <span class="n">max_size</span><span class="o">=</span><span class="n">VOCAB_SIZE</span><span class="p">,</span>
+                     <span class="n">vectors</span><span class="o">=</span><span class="n">VECTORS</span><span class="p">,</span>
+                     <span class="n">unk_init</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="o">.</span><span class="n">normal_</span><span class="p">)</span>
+    <span class="n">LABEL</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+
+    <span class="c1"># 3/ Load iterators</span>
+    <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="n">params_hyper</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">]</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+    <span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">test_iterator</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">BucketIterator</span><span class="o">.</span><span class="n">splits</span><span class="p">((</span><span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">),</span>
+                                                                              <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span><span class="p">,</span>
+                                                                              <span class="n">sort_within_batch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                                              <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="c1"># ...and initialize the embedding layer</span>
+    <span class="n">params_model</span><span class="p">[</span><span class="s1">&#39;embeddings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">vectors</span>
+
+    <span class="c1"># 4/ Initialize the grid search template</span>
+    <span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span><span class="n">params_hyper</span><span class="p">,</span> <span class="n">params_model</span><span class="o">=</span><span class="n">params_model</span><span class="p">,</span> <span class="n">params_loss</span><span class="o">=</span><span class="n">params_loss</span><span class="p">,</span> <span class="n">params_optim</span><span class="o">=</span><span class="n">params_optim</span><span class="p">)</span>
+
+    <span class="c1"># ...and search !</span>
+    <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">train_iterator</span><span class="p">,</span> <span class="n">eval_iterator</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">saves</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">tuner</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And let’s try it out:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test these models</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">sentarget</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">lstm</span><span class="o">.</span><span class="n">BiLSTM</span><span class="p">,</span> <span class="n">sentarget</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">gru</span><span class="o">.</span><span class="n">BiGRU</span><span class="p">]</span>
+
+<span class="c1"># Hyper parameters to tune</span>
+<span class="n">params_hyper</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="c1"># Default parameters</span>
+                    <span class="s1">&#39;epochs&#39;</span><span class="p">:</span>                    <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+                    <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span>                <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span>
+                    <span class="s1">&#39;lr&#39;</span><span class="p">:</span>                        <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+                    <span class="s1">&#39;vectors_name&#39;</span><span class="p">:</span>              <span class="s1">&#39;model.txt&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;vectors_url&#39;</span><span class="p">:</span>               <span class="s1">&#39;http://vectors.nlpl.eu/repository/20/58.zip&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;use_pretrained_embeddings&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span>                 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">],</span>
+                    <span class="s1">&#39;criterion&#39;</span><span class="p">:</span>                 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">]</span>
+                <span class="p">}</span>
+
+<span class="c1"># Parameters affecting the model</span>
+<span class="n">params_model</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;input_dim&#39;</span><span class="p">:</span>             <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="p">)],</span>     <span class="c1"># Should not be modified</span>
+                <span class="s1">&#39;embedding_dim&#39;</span><span class="p">:</span>         <span class="p">[</span><span class="mi">100</span><span class="p">],</span>                 <span class="c1"># Should not be modified</span>
+                <span class="s1">&#39;hidden_dim&#39;</span><span class="p">:</span>            <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+                <span class="s1">&#39;output_dim&#39;</span><span class="p">:</span>            <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">LABEL</span><span class="o">.</span><span class="n">vocab</span><span class="p">)],</span>    <span class="c1"># Should not be modified</span>
+                <span class="s1">&#39;n_layers&#39;</span><span class="p">:</span>              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                <span class="s1">&#39;bidirectional&#39;</span><span class="p">:</span>         <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+                <span class="s1">&#39;dropout&#39;</span><span class="p">:</span>               <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
+                <span class="s1">&#39;pad_idx_text&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">PAD_IDX_TEXT</span><span class="p">],</span>        <span class="c1"># Should not be modified</span>
+                <span class="s1">&#39;pad_idx_label&#39;</span><span class="p">:</span>         <span class="p">[</span><span class="n">PAD_IDX_LABEL</span><span class="p">],</span>       <span class="c1"># Should not be modified</span>
+                <span class="s1">&#39;unk_idx_text&#39;</span><span class="p">:</span>          <span class="p">[</span><span class="n">UNK_IDX_TEXT</span><span class="p">],</span>        <span class="c1"># Should not be modified</span>
+                <span class="s1">&#39;embeddings&#39;</span><span class="p">:</span>            <span class="p">[</span><span class="n">EMBEDDINGS</span><span class="p">]}</span>          <span class="c1"># Should not be modified</span>
+
+<span class="c1"># Parameters used to initialize the loss and optimizer</span>
+<span class="n">params_loss</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ignore_index&#39;</span><span class="p">:</span> <span class="n">PAD_IDX_LABEL</span><span class="p">}</span>
+<span class="n">params_optim</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Run the grid search</span>
+<span class="n">gridsearch</span><span class="p">(</span><span class="n">models</span><span class="p">,</span>
+           <span class="n">params_hyper</span> <span class="o">=</span> <span class="n">params_hyper</span><span class="p">,</span>
+           <span class="n">params_model</span> <span class="o">=</span> <span class="n">params_model</span><span class="p">,</span>
+           <span class="n">params_loss</span> <span class="o">=</span> <span class="n">params_loss</span><span class="p">,</span>
+           <span class="n">params_optim</span> <span class="o">=</span> <span class="n">params_optim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="package.html" class="btn btn-neutral float-right" title="sentarget" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="model.html" class="btn btn-neutral" title="Model" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arthur Dujardin, Lotte Boerboom.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Tuner</a></li>
+<li><a class="reference internal" href="#grid-search">Grid Search</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+         <script src="../_static/language_data.js"></script>
+         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Check the GitHub page and contribute to the project</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/source/package.html">View GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://pages.github.uio.no/arthurd/in5550-exam/" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://pages.github.uio.no/arthurd/in5550-exam/">PyTorch</a></li>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a></li>
+            <li><a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a></li>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a></li>
+            <li><a href="https://github.uio.no/arthurd/in5550-exam/issues" target="_blank">Github Issues</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/pytorch-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://pages.github.uio.no/arthurd/in5550-exam/" aria-label="PyTorch"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a>
+          </li>
+
+
+          <li>
+            <a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://github.uio.no/arthurd/in5550-exam">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>

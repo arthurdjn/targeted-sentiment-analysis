@@ -1,0 +1,745 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sentarget.models.gru &mdash; SenTarget 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://pages.github.uio.no/arthurd/in5550-exam/" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://github.uio.no/arthurd/in5550-exam">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/getting-started.html">Set-up</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/data.html">Data</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/model.html">Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/model.html#solver">Solver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Grid Search</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/gridsearch.html">Grid Search</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html">sentarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html#sentarget-nn">sentarget.nn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html#sentarget-nn-models">sentarget.nn.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html#sentarget-metrics">sentarget.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html#sentarget-tuner">sentarget.tuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html#sentarget-datasets">sentarget.datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/package.html#sentarget-utils">sentarget.utils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../../../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="../../index.html">Module code</a> &gt;</li>
+        
+      <li>sentarget.models.gru</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <h1>Source code for sentarget.models.gru</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The Bilinear Recurrent network is a vanilla model used for targeted sentiment analysis,</span>
+<span class="sd">and compared to more elaborated models.</span>
+
+<span class="sd">Example:</span>
+
+<span class="sd">.. code-block:: python</span>
+
+<span class="sd">    # Defines the shape of the models</span>
+<span class="sd">    INPUT_DIM = len(TEXT.vocab)</span>
+<span class="sd">    EMBEDDING_DIM = 100</span>
+<span class="sd">    HIDDEN_DIM = 128</span>
+<span class="sd">    OUTPUT_DIM = len(LABEL.vocab)</span>
+<span class="sd">    N_LAYERS = 2</span>
+<span class="sd">    BIDIRECTIONAL = True</span>
+<span class="sd">    DROPOUT = 0.25</span>
+<span class="sd">    PAD_IDX = TEXT.vocab.stoi[TEXT.pad_token]</span>
+
+<span class="sd">    model = BiGRU(INPUT_DIM,</span>
+<span class="sd">                   EMBEDDING_DIM,</span>
+<span class="sd">                   HIDDEN_DIM,</span>
+<span class="sd">                   OUTPUT_DIM,</span>
+<span class="sd">                   N_LAYERS,</span>
+<span class="sd">                   BIDIRECTIONAL,</span>
+<span class="sd">                   DROPOUT,</span>
+<span class="sd">                   PAD_IDX)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="kn">from</span> <span class="nn">sentarget.optim</span> <span class="kn">import</span> <span class="n">ConfusionMatrix</span>
+<span class="kn">from</span> <span class="nn">sentarget.utils</span> <span class="kn">import</span> <span class="n">progress_bar</span>
+<span class="kn">from</span> <span class="nn">.model</span> <span class="kn">import</span> <span class="n">Model</span>
+
+
+<div class="viewcode-block" id="BiGRU"><a class="viewcode-back" href="../../../source/package.html#sentarget.models.gru.BiGRU">[docs]</a><span class="k">class</span> <span class="nc">BiGRU</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;This bilinear model uses the `sklearn` template, i.e. with a fit method within the module.</span>
+
+<span class="sd">    Make sure to add a criterion and optimizer when loading a model.</span>
+
+<span class="sd">    * :attr:`input_dim` (int): input dimension, i.e. dimension of the incoming words.</span>
+
+<span class="sd">    * :attr:`embedding_dim` (int): dimension of the word embeddigns.</span>
+
+<span class="sd">    * :attr:`hidden_dim` (int): dimmension used to map words with the recurrent unit.</span>
+
+<span class="sd">    * :attr:`output_dim` (int): dimension used for classification. This one should be equals to the number of classes.</span>
+
+<span class="sd">    * :attr:`n_layers` (int): number of recurrent layers.</span>
+
+<span class="sd">    * :attr:`bidirectional` (bool): if `True`, set two recurrent layers in the opposite direction.</span>
+
+<span class="sd">    * :attr:`dropout` (float): ratio of connections set to zeros.</span>
+
+<span class="sd">    * :attr:`pad_idx_text` (int): index of the `&lt;pad&gt;` text token.</span>
+
+<span class="sd">    * :attr:`pad_idx_label` (int): index of the `&lt;pad&gt;` label token.</span>
+
+<span class="sd">    * :attr:`embeddings` (torch.Tensor): pretrained embeddings, of shape ``(input_dim, embeddings_dim)``.</span>
+
+<span class="sd">    Examples::</span>
+
+<span class="sd">        &gt;&gt;&gt; INPUT_DIM = len(TEXT.vocab)</span>
+<span class="sd">        &gt;&gt;&gt; EMBEDDING_DIM = 100</span>
+<span class="sd">        &gt;&gt;&gt; HIDDEN_DIM = 128</span>
+<span class="sd">        &gt;&gt;&gt; OUTPUT_DIM = len(LABEL.vocab)</span>
+<span class="sd">        &gt;&gt;&gt; N_LAYERS = 2</span>
+<span class="sd">        &gt;&gt;&gt; BIDIRECTIONAL = True</span>
+<span class="sd">        &gt;&gt;&gt; DROPOUT = 0.25</span>
+<span class="sd">        &gt;&gt;&gt; PAD_IDX_TEXT = TEXT.vocab.stoi[TEXT.pad_token]</span>
+<span class="sd">        &gt;&gt;&gt; PAD_IDX_LABEL = LABEL.vocab.stoi[LABEL.unk_token]</span>
+
+<span class="sd">        &gt;&gt;&gt; model = BiGRU(INPUT_DIM,</span>
+<span class="sd">        ...                EMBEDDING_DIM,</span>
+<span class="sd">        ...                HIDDEN_DIM,</span>
+<span class="sd">        ...                OUTPUT_DIM,</span>
+<span class="sd">        ...                N_LAYERS,</span>
+<span class="sd">        ...                BIDIRECTIONAL,</span>
+<span class="sd">        ...                DROPOUT,</span>
+<span class="sd">        ...                pad_idx_text=PAD_IDX_TEXT,</span>
+<span class="sd">        ...                pad_idx_label=PAD_IDX_LABEL)</span>
+
+<span class="sd">        &gt;&gt;&gt; criterion = nn.CrossEntropyLoss()</span>
+<span class="sd">        &gt;&gt;&gt; optimizer = optim.Adam(model.parameters())</span>
+<span class="sd">        &gt;&gt;&gt; model.fit(50, train_data, eval_data, criterion, optimizer)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">input_dim</span><span class="p">,</span>
+                 <span class="n">embedding_dim</span><span class="p">,</span>
+                 <span class="n">hidden_dim</span><span class="p">,</span>
+                 <span class="n">output_dim</span><span class="p">,</span>
+                 <span class="n">n_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                 <span class="n">bidirectional</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">dropout</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+                 <span class="n">pad_idx_text</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">pad_idx_label</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">embeddings</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># dimensions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embedding_dim</span> <span class="o">=</span> <span class="n">embedding_dim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dim</span> <span class="o">=</span> <span class="n">output_dim</span>
+
+        <span class="c1"># modules</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">,</span> <span class="n">padding_idx</span><span class="o">=</span><span class="n">pad_idx_text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gru</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">GRU</span><span class="p">(</span><span class="n">embedding_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">n_layers</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="n">bidirectional</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                            <span class="n">dropout</span><span class="o">=</span><span class="n">dropout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">bidirectional</span> <span class="k">else</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">embeddings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">init_embeddings</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+        <span class="c1"># tokens</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pad_idx_text</span> <span class="o">=</span> <span class="n">pad_idx_text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pad_idx_label</span> <span class="o">=</span> <span class="n">pad_idx_label</span>
+
+<div class="viewcode-block" id="BiGRU.init_embeddings"><a class="viewcode-back" href="../../../source/package.html#sentarget.models.gru.BiGRU.init_embeddings">[docs]</a>    <span class="k">def</span> <span class="nf">init_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Initialize the embeddings vectors from pre-trained embeddings vectors.</span>
+
+<span class="sd">        .. Warning::</span>
+
+<span class="sd">            By default, the embeddings will set to zero the tokens at indices 0 and 1,</span>
+<span class="sd">            that should corresponds to &lt;pad&gt; and &lt;unk&gt;.</span>
+
+
+<span class="sd">        Examples::</span>
+
+<span class="sd">            &gt;&gt;&gt; # TEXT: field used to extract text, sentences etc.</span>
+<span class="sd">            &gt;&gt;&gt; PAD_IDX = TEXT.vocab.stoi[TEXT.pad_token]</span>
+<span class="sd">            &gt;&gt;&gt; UNK_IDX = TEXT.vocab.stoi[TEXT.unk_token]</span>
+<span class="sd">            &gt;&gt;&gt; pretrained_embeddings = TEXT.vocab.vectors</span>
+
+<span class="sd">            &gt;&gt;&gt; model.init_embeddings(pretrained_embeddings, ignore_index=[PAD_IDX, UNK_IDX])</span>
+
+
+<span class="sd">        Args:</span>
+<span class="sd">            embeddings (torch.tensor): pre-trained word embeddings, of shape ``(input_dim, embedding_dim)``.</span>
+<span class="sd">            ignore_index (int or iterable): if not `None`, set to zeros tensors at the indices provided.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ignore_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ignore_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy_</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ignore_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ignore_index</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">ignore_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding_dim</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ignore_index</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ignore_index</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">ignore_index</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding_dim</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ignore_index</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Ambiguous `ignore_index` provided. &quot;</span>
+                               <span class="s2">&quot;Please provide an iterable like a `list` or `tuple`.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BiGRU.forward"><a class="viewcode-back" href="../../../source/package.html#sentarget.models.gru.BiGRU.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;One forward step.</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            The forward propagation requires text&#39;s length, so a padded pack can be applied to batches.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            text (torch.tensor): text composed of word embeddings vectors from one batch.</span>
+<span class="sd">            length (torch.tensor): vector indexing the lengths of `text`.</span>
+
+
+<span class="sd">        Examples::</span>
+
+<span class="sd">            &gt;&gt;&gt; for batch in data_iterator:</span>
+<span class="sd">            &gt;&gt;&gt;     text, length = batch.text</span>
+<span class="sd">            &gt;&gt;&gt;     model.forward(text, length)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Word embeddings</span>
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># Apply a dropout</span>
+        <span class="n">embedded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+        <span class="c1"># Pack and pad a batch</span>
+        <span class="n">packedembeds</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">rnn</span><span class="o">.</span><span class="n">pack_padded_sequence</span><span class="p">(</span><span class="n">embedded</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Apply the recurrent cell</span>
+        <span class="n">packed_output</span><span class="p">,</span> <span class="n">h_n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gru</span><span class="p">(</span><span class="n">packedembeds</span><span class="p">)</span>
+        <span class="c1"># Predict</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">rnn</span><span class="o">.</span><span class="n">pad_packed_sequence</span><span class="p">(</span><span class="n">packed_output</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># Apply another dropout and a linear layer for classification tasks</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">predictions</span></div>
+
+<div class="viewcode-block" id="BiGRU.get_accuracy"><a class="viewcode-back" href="../../../source/package.html#sentarget.models.gru.BiGRU.get_accuracy">[docs]</a>    <span class="k">def</span> <span class="nf">get_accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_tilde</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes the accuracy from a set of predictions and gold labels.</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            The resulting accuracy does not count `&lt;pad&gt;` tokens.</span>
+
+
+<span class="sd">        Args:</span>
+<span class="sd">            y_tilde (torch.tensor): predictions.</span>
+<span class="sd">            y (torch.tensor): gold labels.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            torch.tensor: the global accuracy, of shape 0.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">non_pad_elements</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad_idx_label</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="n">y_tilde</span><span class="p">[</span><span class="n">non_pad_elements</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">non_pad_elements</span><span class="p">])</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">correct</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">bottom</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="n">non_pad_elements</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+        <span class="n">accuracy</span> <span class="o">=</span> <span class="n">correct</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="n">non_pad_elements</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+        <span class="c1"># Handles division by 0</span>
+        <span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span> <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">accuracy</span></div>
+
+<div class="viewcode-block" id="BiGRU.run"><a class="viewcode-back" href="../../../source/package.html#sentarget.models.gru.BiGRU.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Train one time the model on iterator data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            iterator (Iterator): iterator containing batch samples of data.</span>
+<span class="sd">            criterion (Loss): loss function to measure scores.</span>
+<span class="sd">            optimizer (Optimizer): optimizer used during training to update weights.</span>
+<span class="sd">            verbose (bool): if `True` display a progress bar.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: the performance and metrics of the training session.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize the variables</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">epoch_acc</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_dim</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pad_idx_label</span><span class="p">)</span>
+
+        <span class="c1"># Train mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">batch</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="c1"># One forward step</span>
+            <span class="n">text</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">y_hat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+            <span class="n">y_hat</span> <span class="o">=</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Get the predicted classes</span>
+            <span class="n">y_tilde</span> <span class="o">=</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Compute the loss and update the weights</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="c1"># Default accuracy</span>
+            <span class="n">acc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_accuracy</span><span class="p">(</span><span class="n">y_tilde</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+            <span class="n">epoch_acc</span> <span class="o">+=</span> <span class="n">acc</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="c1"># Optional: display a progress bar</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="n">progress_bar</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;Training:</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="n">start_time</span><span class="p">)</span>
+
+            <span class="c1"># Update the confusion matrix</span>
+            <span class="n">confusion_matrix</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">y_tilde</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+
+        <span class="c1"># Store the loss, accuracy and metrics in a dictionary</span>
+        <span class="n">results_train</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">),</span>
+                         <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="n">epoch_acc</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">),</span>
+                         <span class="o">**</span><span class="n">confusion_matrix</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+                         <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">results_train</span></div>
+
+<div class="viewcode-block" id="BiGRU.evaluate"><a class="viewcode-back" href="../../../source/package.html#sentarget.models.gru.BiGRU.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Evaluate one time the model on iterator data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            iterator (Iterator): iterator containing batch samples of data.</span>
+<span class="sd">            criterion (Loss): loss function to measure scores.</span>
+<span class="sd">            optimizer (Optimizer): optimizer used during training to update weights.</span>
+<span class="sd">            verbose (bool): if `True` display a progress bar.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: the performance and metrics of the training session.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize the variables</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">epoch_acc</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_dim</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pad_idx_label</span><span class="p">)</span>
+
+        <span class="c1"># Eval mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">batch</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+                <span class="c1"># One forward step</span>
+                <span class="n">text</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">text</span>
+                <span class="n">y_hat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+                <span class="n">y_hat</span> <span class="o">=</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="c1"># Get the predicted classes</span>
+                <span class="n">y_tilde</span> <span class="o">=</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="c1"># Compute the loss</span>
+                <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+                <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                <span class="c1"># Default accuracy</span>
+                <span class="n">acc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_accuracy</span><span class="p">(</span><span class="n">y_tilde</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+                <span class="n">epoch_acc</span> <span class="o">+=</span> <span class="n">acc</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                <span class="c1"># Optional: display a progress bar</span>
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="n">progress_bar</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;Evaluation:</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="n">start_time</span><span class="p">)</span>
+
+                <span class="c1"># Update the confusion matrix</span>
+                <span class="n">confusion_matrix</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">y_tilde</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+
+        <span class="c1"># Store the loss, accuracy and metrics in a dictionary</span>
+        <span class="n">results_eval</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">),</span>
+                        <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="n">epoch_acc</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">),</span>
+                        <span class="o">**</span><span class="n">confusion_matrix</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+                        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">results_eval</span></div></div>
+</pre></div>
+
+             </article>
+             
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Lotte Boerboom, Silvia N. W. Hertzberg, Arthur Dujardin.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+         <script src="../../../_static/jquery.js"></script>
+         <script src="../../../_static/underscore.js"></script>
+         <script src="../../../_static/doctools.js"></script>
+         <script src="../../../_static/language_data.js"></script>
+         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../../../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Check the GitHub page and contribute to the project</p>
+          <a class="with-right-arrow" href="https://pages.github.uio.no/arthurd/in5550-exam/source/package.html">View GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://pages.github.uio.no/arthurd/in5550-exam/" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://pages.github.uio.no/arthurd/in5550-exam/">PyTorch</a></li>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a></li>
+            <li><a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a></li>
+            <li><a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a></li>
+            <li><a href="https://github.uio.no/arthurd/in5550-exam/issues" target="_blank">Github Issues</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../../../_static/images/pytorch-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://pages.github.uio.no/arthurd/in5550-exam/" aria-label="PyTorch"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/getting-started.html">Get Started</a>
+          </li>
+
+
+          <li>
+            <a href="https://arthurdujardin.com/projects/sentarget.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/source/tutorial.html">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://pages.github.uio.no/arthurd/in5550-exam/">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://github.uio.no/arthurd/in5550-exam">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../../../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>
