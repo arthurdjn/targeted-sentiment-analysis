@@ -26,7 +26,7 @@ to keep track of our progress.
 | Alternative Label Encoding    | not started    | <ul><li>[ ] BIOUL</li></ul>
 | Pipeline vs Joint prediction  | not started    | <ul><li>[ ] Pipeline</li><li>[ ] Joint Prediction</li><li>[ ] Comparison</li></ul>
 | Architecture Impact           | in progress    | <ul><li>[x] LSTM</li><li>[x] GRU</li><li>[ ] Character Level</li><li>[x] Depth</li></ul>
-| Pretrained Word Embeddings    | not started    | <ul><li>[ ] ELMo</li><li>[ ] BERT</li><li>[ ] Multilingual BERT</li></ul>
+| Pretrained Embeddings         | in progress    | <ul><li>[ ] ELMo</li><li>[x] BERT</li><li>[x] Multilingual BERT</li></ul>
 | Error Analysis                | finished       | <ul><li>[x] Confusion Matrix</li><li>[x] Common Errors</li></ul>
 
 
@@ -71,15 +71,15 @@ Make sure that you decode this file with ``encoding='latin1``.
 To run the ``baseline.py`` script, use ```device=torch.device('cpu')``` as the ``cuda`` version was not implemented.
 
 ```
-python baseline.py --NUM_LAYERS         number of hidden layers for BiLSTM
-                   --HIDDEN_DIM         dimensionality of LSTM layers
-                   --BATCH_SIZE         number of examples to include in a batch
-                   --DROPOUT            dropout to be applied after embedding layer
-                   --EMBEDDING_DIM      dimensionality of embeddings
-                   --EMBEDDINGS         location of pretrained embeddings
-                   --TRAIN_EMBEDDINGS   whether to train or leave fixed
-                   --LEARNING_RATE      learning rate for ADAM optimizer
-                   --EPOCHS             number of epochs to train model
+$ python baseline.py --NUM_LAYERS         number of hidden layers for BiLSTM
+                     --HIDDEN_DIM         dimensionality of LSTM layers
+                     --BATCH_SIZE         number of examples to include in a batch
+                     --DROPOUT            dropout to be applied after embedding layer
+                     --EMBEDDING_DIM      dimensionality of embeddings
+                     --EMBEDDINGS         location of pretrained embeddings
+                     --TRAIN_EMBEDDINGS   whether to train or leave fixed
+                     --LEARNING_RATE      learning rate for ADAM optimizer
+                     --EPOCHS             number of epochs to train model
 ```
 
 
@@ -93,5 +93,14 @@ you will find more information there.
 To run the gridsearch algorithm, simply modify the above parameters and run:
 
 ````
-$ python gridsearch.py --conf PATH_TO_CONFIGURATION_FILE
+$ python gridsearch.py --conf   PATH_TO_CONFIGURATION_FILE
 ````
+
+### Evaluation
+
+To test and evaluate a saved model, use the `eval.py` script as follow:
+
+```
+$ python eval.py --model  PATH_TO_SAVED_MODEL
+                 --data   PATH_TO_EVAL_DATA
+```

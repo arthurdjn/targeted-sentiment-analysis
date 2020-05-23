@@ -34,7 +34,7 @@ class BiLSTM(nn.Module):
                  learning_rate=0.01,
                  train_embeddings=False
                  ):
-        super(BiLSTM, self).__init__()
+        super().__init__()
         self.embedding_dim = embedding_dim
         self.hidden_dim = hidden_dim
         self.device = device
@@ -65,9 +65,6 @@ class BiLSTM(nn.Module):
         self.optimizer = torch.optim.Adam(self.parameters(),
                                           lr=self.learning_rate)
 
-        # Confusion with 7 classes, but 2 classes are ignored (<pad> and <unk>)
-        # change it if you want
-        self.confusion = ConfusionMatrix(num_classes=7, ignore_index=[0, 1])
 
     def init_hidden(self, batch_size=1):
         """
