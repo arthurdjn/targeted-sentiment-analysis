@@ -1,3 +1,5 @@
+[![docs](https://img.shields.io/badge/github%20page-up-green)](https://arthurdjn.github.io/targeted-sentiment-analysis/)
+
 # Status
 
 ### Documentation
